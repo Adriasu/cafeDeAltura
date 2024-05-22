@@ -10,7 +10,7 @@ nav{
     min-height: 64px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     color: #FFFFFF;
 }
 
@@ -87,3 +87,35 @@ nav{
     align-items: center;
     justify-content: center;
 }
+
+#hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 486px;
+}
+
+#contentHero{
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    min-height: 390px;
+    gap: 24px;
+}
+
+#contentHeroText{
+    
+}
+
+#contentHero img{
+    width: 588px;
+    height: 390px;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
