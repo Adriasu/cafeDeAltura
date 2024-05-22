@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Outfit;
+}
+
+nav{
+    background-color: #2B2A2B;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #FFFFFF;
+}
+
+#logo{
+    display: flex;
+    min-width: 213.86px;
+    min-height: 36px;
+    gap: 7.33px;
+    align-items: center;
+}
+
+#logo p{
+    font-size: 23.46px;
+    font-weight: 400;
+    line-height: 35.19px;
+    width: 186px;
+    height: 36px;
+}
+
+#logo img{
+    width: 20.53px;
+    height: 24.93px;
+}
+
+#menuWrapper{
+    display: flex;
+    min-width: 512px;
+    min-height: 32px;
+    list-style: none;
+    gap: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+#frame9{
+    display: flex;
+    min-height: 40px;
+    min-width: 288px;
+    gap: 24px;
+    font-size: 14px;
+    align-items: center;
+    font-weight: 600;
+}
+
+#phone{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#phone img{
+    width: 24px;
+    height: 24px;
+}
+
+#phone p{
+    width: 102px;
+    height: 16px;
+    line-height: 16px;
+}
+
+#frame9 a{
+    min-height: 40px;
+    min-width: 130px;
+    border-radius: 4px;
+    background-color:#515051;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
