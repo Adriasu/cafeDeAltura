@@ -98,24 +98,150 @@ nav{
 #contentHero{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     max-width: 1200px;
     min-height: 390px;
     gap: 24px;
 }
 
 #contentHeroText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 588px;
+    min-height: 232px;
+    gap: 16px;
+}
+
+#contentHeroText h3{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #2A5B45;
+}
+
+#contentHeroText h1{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 44px;
+}
+
+#contentHeroText p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+#buttonsHero{
+    display: flex;
+    align-items: center;
+    min-width: 321px;
+    min-height: 40px;
+    gap: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
     
+}
+
+#buttonOne{
+    text-decoration: none;
+    min-width: 168px;
+    min-height: 40px;
+    border-radius: 4px;
+    background-color: #1F1815;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#buttonTwo{
+    text-decoration: none;
+    min-width: 168px;
+    min-height: 40px;
+    border-radius: 4px;
+    background-color: #2A5B45;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #contentHero img{
     width: 588px;
-    height: 390px;
-    border-radius: 20px;
+    height: 390px;  
 }
 
+#cards{
+    min-height: 380px;
+    background-image: url(/assets/images/background\ cards.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
 
+#cards h2{
+    width: 350px;
+    height: 28px;
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+}
 
+#cardWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 996px;
+    min-height: 232px;
+    gap: 24px;
+}
 
+.card{
+    width: 316px;
+    height: 232px;
+    border-radius: 8px;
+    border: 1px solid #F7F5F3;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px 0px #E3DED7CC;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#cardWrapper .card img{
+    min-width: 64px;
+    min-height: 64px;
+}
+
+#cardWrapper .card h3{
+    width: 268px;
+    height: 24px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    color: #2B2A2B;
+}
+
+#cardWrapper .card p{
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #111827;
+    width: 268px;
+
+}
 
 
 
