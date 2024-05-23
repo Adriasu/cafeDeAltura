@@ -264,7 +264,7 @@ nav{
 
 #cardWrapperProducts{
     display: flex;
-    max-width: ;width: 1200px;
+    max-width: 1200px;
     min-height: 391.39px;
     gap: 24px;
     justify-content: space-between;
@@ -351,6 +351,7 @@ nav{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 24px;
 }
 
 #FAQ h2{
@@ -370,13 +371,16 @@ nav{
 }
 
 .FAQWrapperElements{
+    width: 668px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 16px;
     border-radius: 10px;
-    background-color: #FFFFFF;   
+    background-color: #FFFFFF; 
+    min-height: 72px; 
+    transition: all 1s;
 }
 
 .FAQWrapperTitle{
@@ -397,7 +401,8 @@ nav{
 
 .FAQWrapperElements hr{
     width: 620px;
-    border: 1px solid #E3DED7
+    border: 1px solid #E3DED7;
+    display: none; 
 }
 
 .FAQWrapperElements p{
@@ -405,5 +410,125 @@ nav{
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
+    display: none;
 }
 
+.FAQWrapperElements:hover{
+    min-height: 168px;
+}
+
+.FAQWrapperElements:hover hr{
+    display: block;
+}
+
+.FAQWrapperElements:hover p{
+    display: block;
+}
+
+.FAQWrapperElements:hover .FAQWrapperTitle img{
+    transform: rotate(180deg);
+}
+
+/* #elementOne:hover{
+    min-height: 136px;   
+}
+
+#elementOne:hover hr{
+    display: block;
+}
+
+#elementOne:hover p{
+    display: block;
+}
+
+#elementTwo:hover{
+    height: 168px;
+    transition: all 1s;   
+}
+
+#elementTwo:hover hr{
+    display: block;
+    transition: all 1s;
+}
+
+#elementTwo:hover p{
+    display: block;
+    transition: all 1s;
+}
+
+#elementThree:hover{
+    min-height: 122px;
+}
+
+#elementThree:hover hr{
+    display: block;
+}
+
+#elementThree:hover p{
+    display: block;
+}
+ */
+
+ #linkIcon2{
+    min-width: 178px;
+    min-height: 24px;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+ }
+
+ #linkIcon2 a{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+    color: #FFFFFF;
+ }
+
+ #linkIcon2 img{
+    height: 24px;
+    width: 24px;
+ }
+
+ #featureSection{
+    height: 480px;
+    background-color: #F7F5F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+ #featureSectionWrapper{
+    display: flex;
+    min-height: 390px;
+    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ #featureSectionWrapper > img{
+    width: 588px;
+    height: 390px;
+    border-radius: 20px;
+ }
+
+ #featureSectionWrapperContent{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 457px;
+    min-height: 116px; 
+ }
+
+ #featureSectionWrapperContent h2{
+    color: #2A5B45;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+ }
+
+ #featureSectionWrapperContent p{
+    color: #111827;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+ }
