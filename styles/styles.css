@@ -547,4 +547,86 @@ nav{
     border-radius: 20px;
  }
 
- 
+ #splitTwoToneDesktop{
+    min-height: 552px;
+    background-color: #E3DED7;
+    display: flex;
+    justify-content: center;
+ }
+
+ #leadingContent{
+    width: 1200px;
+    min-height: 552px;
+    gap: 24px;
+    opacity: 90%;
+    background-color: #E3DED7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+
+ #contactSections{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 588px;
+    min-height: 320px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #6B7280;
+ }
+
+ #contactSectionsHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+ }
+
+ #contactSectionsHeader h3{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #111827;
+ }
+
+ #contactSectionsContent{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+ }
+
+ #contentDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+ }
+
+ #contentDetails img{
+    height: 24px;
+    width: 24px;
+ }
+
+ #detailsPhone{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+ }
+
+ #detailsMail{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+ }
+
+ #contactSectionsContent a{
+    color: #6B7280;
+    text-decoration: none;
+ }
+
+ #linkContent{
+    text-decoration: underline;
+    color: #000000;
+    font-weight: 600;
+ }
+
