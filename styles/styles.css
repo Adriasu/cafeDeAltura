@@ -630,3 +630,67 @@ nav{
     font-weight: 600;
  }
 
+ #trailingContent{
+    width: 588px;
+    min-height: 552px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+ }
+
+ form{
+    min-width: 470px;
+    min-height: 488px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #374151;
+ }
+
+ .inputext{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+ }
+
+ .inputext input,
+ .inputext textarea{
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    width: 100%;
+    
+ }
+
+ .inputext input{
+    min-height: 34px;
+ }
+
+ #phoneFormFieldsTextInput{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+ }
+
+ #phoneFormFieldsTextInput input::placeholder{
+    color: #6B7280;
+    padding-left: 68px;
+ }
+
+ #phoneFormFieldsTextInput div{
+    display: flex;
+    align-items: center;
+    min-width: 68px;
+    justify-content: center;
+    position: absolute;
+    
+ }
+
+ .inputext textarea{
+    height: 122px;
+ }
+

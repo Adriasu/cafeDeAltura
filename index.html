@@ -238,35 +238,58 @@
               </div>
             </div>
             <a href=""
-              >¿Buscas un trabajo? <span id="linkContent">Ver nuestras ofertas</span>.</a
+              >¿Buscas un trabajo?
+              <span id="linkContent">Ver nuestras ofertas</span>.</a
             >
           </div>
         </div>
 
         <div id="trailingContent">
           <form>
-            <label for="fullName">Nombre completo</label><br />
-            <input type="text" id="fullName" name="fullName" />
-
-            <label for="email">Email</label><br />
-            <input type="text" id="email" name="email" />
-
-            <label for="phone">Teléfono</label><br />
-            <div>
-              <p>US</p>
-              <img src="/assets/images/Chevron down.png" alt="down" />
+            <div class="inputext">
+              <label for="fullName">Nombre completo</label>
+              <input type="text" id="fullName" name="fullName" />
             </div>
-            <input type="text" id="phone" name="phone" placeholder="+1 (555) 987-6543" />
 
-            <label for="help"> </label>
-            <textarea name="help" id="help" placeholder="¿En qué podemos ayudarte?"></textarea> <br>
+            <div class="inputext">
+              <label for="email">Email</label>
+              <input type="text" id="email" name="email" />
+            </div>
 
-            <input type="checkbox" id="privacy" name="privacy">
-            <label for="privacy">Acepto la Política de Privacidad y los Términos y condiciones.</label> <br>
-            
+            <div class="inputext">
+              <label for="phone">Teléfono</label>
+              <div id="phoneFormFieldsTextInput">
+                <div>
+                  <p>US</p>
+                  <img src="/assets/images/Chevron down.png" alt="down" />
+                </div>
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  placeholder="+1 (555) 987-6543"
+                />
+              </div>
+            </div>
+
+            <div class="inputext">
+              <label for="help"> </label>
+              <textarea
+                name="help"
+                id="help"
+                placeholder="¿En qué podemos ayudarte?"
+              ></textarea>
+            </div>
+
+            <div id="formPrivacy">
+              <input type="checkbox" id="privacy" name="privacy" />
+              <label for="privacy"
+                >Acepto la Política de Privacidad y los Términos y
+                condiciones.</label
+              >
+            </div>
+
             <a href="">Enviar</a>
-
-
           </form>
         </div>
       </div>
