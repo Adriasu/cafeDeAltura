@@ -228,11 +228,11 @@
               <p>Springfield, OR 12345</p>
             </div>
             <div id="contentDetails">
-              <div id="detailsPhone">
+              <div class="details">
                 <img src="/assets/images/Phone2.png" alt="phone" />
                 <p>+1 (555) 123-4567</p>
               </div>
-              <div id="detailsMail">
+              <div class="details">
                 <img src="/assets/images/Mail@2x.png" alt="mail" />
                 <p>support@example.com</p>
               </div>
@@ -259,9 +259,12 @@
             <div class="inputext">
               <label for="phone">Teléfono</label>
               <div id="phoneFormFieldsTextInput">
-                <div>
-                  <p>US</p>
-                  <img src="/assets/images/Chevron down.png" alt="down" />
+               <div>
+                  <select name="country" id="country">
+                    <option value="US">US</option>
+                    <option value="CO">CO</option>
+                    <option value="FR">FR</option>
+                  </select>
                 </div>
                 <input
                   type="text"
@@ -272,8 +275,8 @@
               </div>
             </div>
 
-            <div class="inputext">
-              <label for="help"> </label>
+            <div class="inputext" id="inputTextarea">
+              <label for="help">label</label>
               <textarea
                 name="help"
                 id="help"

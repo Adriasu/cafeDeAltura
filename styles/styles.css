@@ -93,7 +93,7 @@ nav{
     justify-content: center;
     align-items: center;
     min-height: 486px;
-    background-color: #E3DED7;
+    background: #E3DED74D;
     box-shadow: 0px 4px 4px 0px #00000040;
 
 }
@@ -607,13 +607,7 @@ nav{
     width: 24px;
  }
 
- #detailsPhone{
-    display: flex;
-    gap: 12px;
-    align-items: center;
- }
-
- #detailsMail{
+ .details{
     display: flex;
     gap: 12px;
     align-items: center;
@@ -674,23 +668,55 @@ nav{
     display: flex;
     align-items: center;
     font-size: 14px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    box-shadow: 0px 1px 2px 0px #0000000D;
  }
 
  #phoneFormFieldsTextInput input::placeholder{
     color: #6B7280;
-    padding-left: 68px;
+ }
+
+ #phoneFormFieldsTextInput input{
+    border: none;
  }
 
  #phoneFormFieldsTextInput div{
+    width: 68px;
     display: flex;
     align-items: center;
-    min-width: 68px;
     justify-content: center;
-    position: absolute;
-    
+    height: 38px;
+ }
+
+ #phoneFormFieldsTextInput select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+ }
+
+ #inputTextarea{
+    min-height: 142px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+ }
+
+ #inputTextarea label{
+    height: 16px;
+    opacity: 0;
  }
 
  .inputext textarea{
     height: 122px;
+ }
+
+ #inputTextarea textarea::placeholder{
+    color: #6B7280;
+    font-size: 14px;
+    position: absolute;
+    top: 13px;
+    left: 17px;
  }
 
