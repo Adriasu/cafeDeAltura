@@ -703,11 +703,6 @@ nav{
     gap: 4px;
  }
 
- #inputTextarea label{
-    height: 16px;
-    opacity: 0;
- }
-
  .inputext textarea{
     height: 122px;
  }
@@ -719,4 +714,37 @@ nav{
     top: 13px;
     left: 17px;
  }
+
+ #formPrivacy{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 14px;
+    color: #374151;
+ }
+
+ .privacyPolicy{
+    font-weight: 600;
+    text-decoration: underline;
+ }
+
+ form a{
+    width: 90px;
+    height: 40px;
+    border-radius: 4px;
+    background: #2A5B45;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+ }
+
+ .efect:hover{
+    border: 1px solid #9B9EA3;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+ }
+
 

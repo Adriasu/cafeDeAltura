@@ -248,18 +248,18 @@
           <form>
             <div class="inputext">
               <label for="fullName">Nombre completo</label>
-              <input type="text" id="fullName" name="fullName" />
+              <input class="efect" type="text" id="fullName" name="fullName" />
             </div>
 
             <div class="inputext">
               <label for="email">Email</label>
-              <input type="text" id="email" name="email" />
+              <input class="efect" type="text" id="email" name="email" />
             </div>
 
             <div class="inputext">
               <label for="phone">Teléfono</label>
-              <div id="phoneFormFieldsTextInput">
-               <div>
+              <div id="phoneFormFieldsTextInput" class="efect">
+                <div>
                   <select name="country" id="country">
                     <option value="US">US</option>
                     <option value="CO">CO</option>
@@ -276,8 +276,9 @@
             </div>
 
             <div class="inputext" id="inputTextarea">
-              <label for="help">label</label>
+              <label for="help">Comentarios</label>
               <textarea
+                class="efect"
                 name="help"
                 id="help"
                 placeholder="¿En qué podemos ayudarte?"
@@ -287,15 +288,21 @@
             <div id="formPrivacy">
               <input type="checkbox" id="privacy" name="privacy" />
               <label for="privacy"
-                >Acepto la Política de Privacidad y los Términos y
-                condiciones.</label
+                >Acepto la
+                <span class="privacyPolicy">Política de Privacidad</span> y los
+                <span class="privacyPolicy">Términos y condiciones</span
+                >.</label
               >
             </div>
-
             <a href="">Enviar</a>
           </form>
         </div>
       </div>
     </section>
+    
+
+
+
+
   </body>
 </html>
