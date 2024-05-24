@@ -505,12 +505,6 @@ nav{
     align-items: center;
  }
 
- #featureSectionWrapper > img{
-    width: 588px;
-    height: 390px;
-    border-radius: 20px;
- }
-
  #featureSectionWrapperContent{
     display: flex;
     flex-direction: column;
@@ -531,4 +525,26 @@ nav{
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
+ }
+
+ #linkIconFeatureSection{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    font-size: 14px;
+    
+ }
+
+ #linkIconFeatureSection a{
+    line-height: 16px;
+    font-weight: 600;
+    color: #000000;
+
+ }
+
+ #featureSectionWrapper > img{
+    width: 588px;
+    height: 390px;
+    border-radius: 20px;
+
  }
