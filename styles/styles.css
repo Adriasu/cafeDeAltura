@@ -429,46 +429,6 @@ nav{
     transform: rotate(180deg);
 }
 
-/* #elementOne:hover{
-    min-height: 136px;   
-}
-
-#elementOne:hover hr{
-    display: block;
-}
-
-#elementOne:hover p{
-    display: block;
-}
-
-#elementTwo:hover{
-    height: 168px;
-    transition: all 1s;   
-}
-
-#elementTwo:hover hr{
-    display: block;
-    transition: all 1s;
-}
-
-#elementTwo:hover p{
-    display: block;
-    transition: all 1s;
-}
-
-#elementThree:hover{
-    min-height: 122px;
-}
-
-#elementThree:hover hr{
-    display: block;
-}
-
-#elementThree:hover p{
-    display: block;
-}
- */
-
  #linkIcon2{
     min-width: 178px;
     min-height: 24px;
@@ -763,5 +723,7 @@ nav{
     box-shadow: 0px 1px 2px 0px #0000000D;
     outline: none;
  }
+
+ 
 
 
