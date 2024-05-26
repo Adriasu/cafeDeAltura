@@ -12,6 +12,11 @@ nav{
     align-items: center;
     justify-content: space-around;
     color: #FFFFFF;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+
 }
 
 #logo{
@@ -46,6 +51,15 @@ nav{
     align-items: center;
     justify-content: space-between;
     font-weight: 600;
+}
+
+#menuWrapper li{
+    padding: 8px;
+}
+
+#menuWrapper li:hover{
+    background-color: #F7F5F31A;
+    border-radius: 8px;
 }
 
 #frame9{
@@ -95,7 +109,7 @@ nav{
     min-height: 486px;
     background: #E3DED74D;
     box-shadow: 0px 4px 4px 0px #00000040;
-
+    margin-top: 64px;
 }
 
 #contentHero{
@@ -218,13 +232,17 @@ nav{
     background: #FFFFFF;
     box-shadow: 0px 1px 4px 0px #E3DED7CC;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: center; 
 }
 
-.card img{
+.card > div{
     min-width: 64px;
     min-height: 64px;
+    background-color: #2A5B45;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card h3{
@@ -744,6 +762,8 @@ nav{
     width: 1200px;
     min-height: 201px;
     gap: 16px;
+    position: absolute;
+    top: 28.61px;
 }
 
 #logoFooter{
