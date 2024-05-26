@@ -16,7 +16,6 @@ nav{
     width: 100%;
     top: 0;
     z-index: 1;
-
 }
 
 #logo{
@@ -40,7 +39,7 @@ nav{
     height: 24.93px;
 }
 
-#menuWrapper{
+#menuWrapperNav{
     display: flex;
     min-width: 512px;
     min-height: 32px;
@@ -53,16 +52,16 @@ nav{
     font-weight: 600;
 }
 
-#menuWrapper li{
+#menuWrapperNav li{
     padding: 8px;
 }
 
-#menuWrapper li:hover{
+#menuWrapperNav li:hover{
     background-color: #F7F5F31A;
     border-radius: 8px;
 }
 
-#frame9{
+#navPhoneButton{
     display: flex;
     min-height: 40px;
     min-width: 288px;
@@ -89,7 +88,7 @@ nav{
     line-height: 16px;
 }
 
-#frame9 a{
+#navPhoneButton a{
     min-height: 40px;
     min-width: 130px;
     border-radius: 4px;
@@ -112,7 +111,7 @@ nav{
     margin-top: 64px;
 }
 
-#contentHero{
+#wrapperHero{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -121,7 +120,7 @@ nav{
     gap: 24px;
 }
 
-#contentHeroText{
+#wrapperHeroText{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -130,20 +129,20 @@ nav{
     gap: 16px;
 }
 
-#contentHeroText h3{
+#wrapperHeroText h3{
     font-weight: 600;
     font-size: 18px;
     line-height: 24px;
     color: #2A5B45;
 }
 
-#contentHeroText h1{
+#wrapperHeroText h1{
     font-weight: 600;
     font-size: 40px;
     line-height: 44px;
 }
 
-#contentHeroText p{
+#wrapperHeroText p{
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
@@ -158,7 +157,6 @@ nav{
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    
 }
 
 #buttonOne{
@@ -185,7 +183,7 @@ nav{
     justify-content: center;
 }
 
-#contentHero img{
+#wrapperHero img{
     width: 588px;
     height: 390px;  
 }
@@ -280,7 +278,7 @@ nav{
     width: 120px;
 }
 
-#cardWrapperProducts{
+#card2Wrapper{
     display: flex;
     max-width: 1200px;
     min-height: 391.39px;
@@ -289,7 +287,7 @@ nav{
     align-items: center;
 }
 
-.productCard{
+.card2Product{
     width: 282px;
     min-height: 391.39px;
     border-radius: 8px;
@@ -301,15 +299,15 @@ nav{
     justify-content: center;
 }
 
-.productCard:hover{
+.card2Product:hover{
     background: #F7F5F3;
 }
 
-.productCard:hover a{
+.card2Product:hover a{
     background: #2A5B45;
 }
 
-.productCard img{
+.card2Product img{
     width: 219.39px;
     height: 219.39px;
 }
@@ -329,7 +327,7 @@ nav{
     font-weight: 600;
 }
 
-.productCard a{
+.card2Product a{
     min-height: 32px;
     min-width: 60px;
     background: #2A5B45B2;
@@ -344,7 +342,7 @@ nav{
     line-height: 16px;
 }
 
-#linkIcon{
+#card2linkIcon{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -353,11 +351,11 @@ nav{
     font-weight: 600;
 }
 
-#linkIcon a{
+#card2linkIcon a{
     color: #000000;
 }
 
-#linkIcon img{
+#card2linkIcon img{
     height: 24px;
     width: 24px;
 }
@@ -421,6 +419,7 @@ nav{
     width: 620px;
     border: 1px solid #E3DED7;
     display: none; 
+    transition: all 1s;
 }
 
 .FAQWrapperElements p{
@@ -429,10 +428,11 @@ nav{
     font-size: 12px;
     line-height: 16px;
     display: none;
+    transition: all 1s;
 }
 
 .FAQWrapperElements:hover{
-    min-height: 168px;
+    padding: 24px;
 }
 
 .FAQWrapperElements:hover hr{
@@ -447,7 +447,7 @@ nav{
     transform: rotate(180deg);
 }
 
- #linkIcon2{
+ #FQALinkIcon{
     min-width: 178px;
     min-height: 24px;
     gap: 16px;
@@ -455,14 +455,14 @@ nav{
     align-items: center;
  }
 
- #linkIcon2 a{
+ #FQALinkIcon a{
     font-size: 14px;
     font-weight: 600;
     line-height: 16px;
     color: #FFFFFF;
  }
 
- #linkIcon2 img{
+ #FQALinkIcon img{
     height: 24px;
     width: 24px;
  }
@@ -709,15 +709,20 @@ nav{
     gap: 12px;
     align-items: center;
     font-size: 14px;
+ }
+
+ #formPrivacy label a{
     color: #374151;
+    text-decoration: none;
  }
 
  .privacyPolicy{
     font-weight: 600;
     text-decoration: underline;
+    color: #374151;
  }
 
- form a{
+ form > a{
     width: 90px;
     height: 40px;
     border-radius: 4px;
@@ -794,9 +799,16 @@ nav{
     align-items: flex-start;
 }
 
-#linksContactWrapper >p{
-    font-size: 18px;
-    line-height: 24px;
+.buttonsFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.buttonsFooter a{
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 #buttonphonefooter{
@@ -817,13 +829,6 @@ nav{
     align-items: center;
     justify-content: center;
     border-radius: 4px;
-}
-
-.buttonsFooter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
 }
 
 #footerWrapper ul{
