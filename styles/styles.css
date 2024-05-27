@@ -637,8 +637,7 @@ nav{
  .inputext textarea{
     border-radius: 6px;
     border: 1px solid #D1D5DB;
-    width: 100%;
-    
+    width: 100%; 
  }
 
  .inputext input{
@@ -697,6 +696,8 @@ nav{
 
  .inputext textarea{
     height: 122px;
+    padding-left: 17px;
+    padding-top: 13px;
  }
 
  #inputTextarea textarea::placeholder{
@@ -729,7 +730,7 @@ nav{
     color: #374151;
  }
 
- form > a{
+ #buttonSubmit{
     width: 90px;
     height: 40px;
     border-radius: 4px;
@@ -740,7 +741,8 @@ nav{
     color: #FFFFFF;
     font-size: 14px;
     font-weight: 600;
-    text-decoration: none;
+    border: none;
+    cursor: pointer;
  }
 
  .efect:hover{
@@ -752,11 +754,6 @@ nav{
     border: 2px solid #3F8F6B;
     box-shadow: 0px 1px 2px 0px #0000000D;
     outline: none;
- }
-
- textarea{
-    padding-left: 17px;
-    padding-top: 13px;
  }
 
  .space{
@@ -858,6 +855,10 @@ nav{
     position: absolute;
     top: 2.61px;
     left: 577px;
+}
+#menuWrapperFooter li,
+#menuWrapperFooterPrivacy li{
+    cursor: pointer;
 }
 
 #menuWrapperFooterPrivacy{
