@@ -625,6 +625,8 @@ nav{
  }
 
  .inputext{
+    line-height: 16px;
+    line-height: 16px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -858,10 +860,5 @@ nav{
     top: 270.34px;
     display: flex;
     align-items: center;
-}
-
-#copyrightFooter p{
-    position: absolute;
-    left: 540.5px;
-    top: 12px;
+    justify-content: center;
 }
