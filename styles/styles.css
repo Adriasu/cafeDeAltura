@@ -362,7 +362,7 @@ nav{
 }
 
 #FAQ{
-    min-height: 621px;
+    min-height: 444px;
     background-color: #2A5B45;
     display: flex;
     flex-direction: column;
@@ -379,7 +379,7 @@ nav{
 }
 
 #FAQWrapper{
-    height: 425px;
+    min-height: 216px;
     width: 668px;
     display: flex;
     flex-direction: column;
@@ -393,11 +393,11 @@ nav{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
     border-radius: 10px;
     background-color: #FFFFFF; 
     min-height: 72px; 
     transition: all 1s;
+    padding: 24px;
 }
 
 .FAQWrapperTitle{
@@ -414,13 +414,30 @@ nav{
 .FAQWrapperTitle img{
     height: 20px;
     width: 20px;
+    transition: all 0.5s;
+}
+
+.FAQWrappertext{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 0px;
+    overflow: hidden;   
+    transition: all 0.5s;
+}
+
+.FAQWrapperElements:hover .FAQWrappertext{
+    height: 64px;
+    margin-top: 16px;
+} 
+
+.FAQWrapperElements:hover .FAQWrapperTitle img{
+    transform: rotate(180deg);
 }
 
 .FAQWrapperElements hr{
     width: 620px;
-    border: 1px solid #E3DED7;
-    display: none; 
-    transition: all 1s;
+    border: 1px solid #E3DED7;  
 }
 
 .FAQWrapperElements p{
@@ -428,24 +445,6 @@ nav{
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    display: none;
-    transition: all 1s;
-}
-
-.FAQWrapperElements:hover{
-    padding: 24px;
-}
-
-.FAQWrapperElements:hover hr{
-    display: block;
-}
-
-.FAQWrapperElements:hover p{
-    display: block;
-}
-
-.FAQWrapperElements:hover .FAQWrapperTitle img{
-    transform: rotate(180deg);
 }
 
  #FQALinkIcon{
@@ -698,6 +697,7 @@ nav{
     height: 122px;
     padding-left: 17px;
     padding-top: 13px;
+    padding-right: 13px;
  }
 
  #inputTextarea textarea::placeholder{
