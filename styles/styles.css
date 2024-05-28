@@ -369,6 +369,7 @@ nav{
     align-items: center;
     justify-content: center;
     gap: 24px;
+    
 }
 
 #FAQ h2{
@@ -376,10 +377,11 @@ nav{
     font-weight: 500;
     font-size: 24px;
     line-height: 28px;
-    height: 100px;
+    height: 93px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+    padding: 17px;
 }
 
 #FAQWrapper{
@@ -452,10 +454,9 @@ nav{
 
  #FQALinkIcon{
     min-width: 178px;
-    height: 100px;
+    height: 72px;
     gap: 16px;
     display: flex;
-    align-items: center;
  }
 
  #FQALinkIcon a{
