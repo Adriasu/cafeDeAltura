@@ -290,7 +290,7 @@ nav{
 
 .card2Product{
     width: 282px;
-    min-height: 391.39px;
+    height: 391.39px;
     border-radius: 8px;
     gap: 24px;
     border: 1px solid #E3DED7;
@@ -386,7 +386,7 @@ nav{
 
 #FAQWrapper{
     min-height: 216px;
-    width: 668px;
+    min-width: 668px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -394,7 +394,7 @@ nav{
 }
 
 .FAQWrapperElements{
-    width: 668px;
+    min-width: 668px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -409,7 +409,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 620px;
+    min-width: 620px;
     min-height: 24px;
     font-size: 18px;
     font-weight: 600;
@@ -418,7 +418,7 @@ nav{
 
 .FAQWrapperTitle img{
     height: 20px;
-    max-width: 20px;
+    width: 20px;
     transition: all 0.5s;
 }
 
@@ -453,7 +453,7 @@ nav{
 }
 
  #FQALinkIcon{
-    min-width: 178px;
+    width: 178px;
     height: 72px;
     gap: 16px;
     display: flex;
@@ -537,7 +537,7 @@ nav{
  }
 
  #leadingContent{
-    width: 1200px;
+    max-width: 1200px;
     min-height: 552px;
     gap: 24px;
     opacity: 90%;
@@ -552,7 +552,7 @@ nav{
     flex-direction: column;
     gap: 32px;
     width: 588px;
-    min-height: 320px;
+    height: 320px;
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
