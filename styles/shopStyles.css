@@ -8,5 +8,29 @@
 #cardsProducts{
     margin-top: 64px;
     min-height: 938.79px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  
+}
+
+#cardsProducts h2{
+    font-size: 24px;
+    font-weight: 500;
+    color: #2A5B45;
+    line-height: 28px;
+}
+
+#containCardsProducts{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    width: 1200px;
+    justify-content: space-between;
+    row-gap: 24px;
+    
+    
 
 }
+

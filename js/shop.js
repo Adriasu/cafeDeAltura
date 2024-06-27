@@ -2,9 +2,17 @@ import { productsCards } from "../utils/products.js";
 
 const cardsProducts = document.createElement("section")
 const cardsConditions = document.getElementById("cardsConditions")
+const h2 = document.createElement("h2")
+const containCardsProducts = document.createElement("div")
+
 document.getElementsByTagName("body")[0].insertBefore(cardsProducts, cardsConditions)
 
 cardsProducts.id = "cardsProducts"
+cardsProducts.appendChild(h2)
+cardsProducts.appendChild(containCardsProducts)
+
+h2.innerHTML = "Últimos orígenes"
+containCardsProducts.id = "containCardsProducts"
 
 productsCards.forEach((card) => {
     const cardNewsWrapperProduct = document.createElement("div")
@@ -14,7 +22,7 @@ productsCards.forEach((card) => {
     const priceProductCard = document.createElement("p")
     const buttonCardAdd = document.createElement("a")
 
-    cardsProducts.appendChild(cardNewsWrapperProduct)
+    containCardsProducts.appendChild(cardNewsWrapperProduct)
     cardNewsWrapperProduct.appendChild(imgCard)
     cardNewsWrapperProduct.appendChild(containProductInfo)
     containProductInfo.appendChild(nameProductCard)
