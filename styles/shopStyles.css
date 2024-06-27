@@ -24,11 +24,11 @@
 }
 
 #containCardsProducts{
-    display: grid;
-    grid-template-columns: repeat(4, 25%);
+    display: ;
+    
     width: 1200px;
-    justify-content: space-between;
-    row-gap: 24px;
+    
+    
     
     
 
