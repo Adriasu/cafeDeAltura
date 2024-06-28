@@ -4,6 +4,7 @@ const cardsProducts = document.createElement("section")
 const cardsConditions = document.getElementById("cardsConditions")
 const h2 = document.createElement("h2")
 const containCardsProducts = document.createElement("div")
+const cart = document.createElement("div")
 
 document.getElementsByTagName("body")[0].insertBefore(cardsProducts, cardsConditions)
 
