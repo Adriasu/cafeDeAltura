@@ -1,6 +1,8 @@
 //crear card del carrito:
 
 export function selectedCardCreator(arrayCart) {
+  let total = 0
+  let totalOfProducts = 0
   arrayCart.forEach((newProduct) => {
     const card = document.createElement("section");
     const img = document.createElement("img");
@@ -42,6 +44,11 @@ export function selectedCardCreator(arrayCart) {
       });
       arrayCart.splice(deleteProduct, 1);
     });
+
+    totalOfProducts = totalOfProducts + 5
+
+    console.log(totalOfProducts);
+
   });
   return;
 }

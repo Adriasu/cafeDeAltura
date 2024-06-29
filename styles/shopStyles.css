@@ -5,6 +5,26 @@
     font-family: Outfit;
 }
 
+#containBagCounter{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#containBagCounter p{
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #F7F5F31A;
+}
+
 #cardsProducts{
     margin-top: 64px;
     min-height: 938.79px;

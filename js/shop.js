@@ -8,6 +8,7 @@ const containCardsProducts = document.createElement("div");
 const cart = document.createElement("div");
 const btnClear = document.createElement("a");
 const containSelectedProducts = document.createElement("div");
+const sumProducts = document.getElementById("sumProducts")
 
 document
   .getElementsByTagName("body")[0]
@@ -78,3 +79,5 @@ productsCards.forEach((card) => {
     selectedCardCreator(arrayCart);
   });
 });
+
+
