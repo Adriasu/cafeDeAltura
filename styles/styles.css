@@ -300,11 +300,11 @@ nav{
     justify-content: center;
 }
 
-.cardNewsWrapperProduct:hover{
+.hoverCards:hover{
     background: #F7F5F3;
 }
 
-.cardNewsWrapperProduct:hover a{
+.cardNewsWrapperProduct:hover .hoverBtn{
     background: #2A5B45;
 }
 

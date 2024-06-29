@@ -34,9 +34,10 @@ productsCards.forEach((card) => {
   containProductInfo.appendChild(priceProductCard);
   cardNewsWrapperProduct.appendChild(buttonCardAdd);
 
-  cardNewsWrapperProduct.className = "cardNewsWrapperProduct";
+  cardNewsWrapperProduct.className = "cardNewsWrapperProduct hoverCards";
   containProductInfo.className = "productInfo";
-  buttonCardAdd.className = "Active"
+  buttonCardAdd.className = "Active hoverBtn"
+  
 
   imgCard.src = card.img;
   nameProductCard.innerHTML = card.nameProduct;
@@ -49,6 +50,8 @@ productsCards.forEach((card) => {
 
     if (card.available === false) {
       buttonCardAdd.classList.add("notActive")
+      buttonCardAdd.classList.remove("hoverBtn")
+      cardNewsWrapperProduct.classList.remove("hoverCards")
     }
 
  
