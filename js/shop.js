@@ -1,3 +1,4 @@
+import { selectedCardCreator } from "../utils/functions.js";
 import { productsCards } from "../utils/products.js";
 
 const cardsProducts = document.createElement("section");
@@ -19,6 +20,8 @@ cardsProducts.appendChild(containCardsProducts);
 h2.innerHTML = "Últimos orígenes";
 containCardsProducts.id = "containCardsProducts";
 
+const arrayCart = [];
+
 productsCards.forEach((card) => {
   const cardNewsWrapperProduct = document.createElement("div");
   const imgCard = document.createElement("img");
@@ -36,24 +39,34 @@ productsCards.forEach((card) => {
 
   cardNewsWrapperProduct.className = "cardNewsWrapperProduct hoverCards";
   containProductInfo.className = "productInfo";
-  buttonCardAdd.className = "Active hoverBtn"
-  
+  buttonCardAdd.className = "Active hoverBtn";
 
   imgCard.src = card.img;
   nameProductCard.innerHTML = card.nameProduct;
   priceProductCard.innerHTML = card.price;
-  buttonCardAdd.href = "";
 
   card.available === true
     ? (buttonCardAdd.innerHTML = "Añadir")
     : (buttonCardAdd.innerHTML = "Agotado");
 
-    if (card.available === false) {
-      buttonCardAdd.classList.add("notActive")
-      buttonCardAdd.classList.remove("hoverBtn")
-      cardNewsWrapperProduct.classList.remove("hoverCards")
-    }
+  if (card.available === false) {
+    buttonCardAdd.classList.add("notActive");
+    buttonCardAdd.classList.remove("hoverBtn");
+    cardNewsWrapperProduct.classList.remove("hoverCards");
+  }
+
+  buttonCardAdd.addEventListener("click", () => {
+    cart.innerHTML = "";
+    const productSelected = {
+      id: card.id,
+      img: card.img,
+      nameProduct: card.nameProduct,
+      price: card.price,
+    };
+    arrayCart.push(productSelected);
+    
+    selectedCardCreator(arrayCart)
 
  
-
+  });
 });

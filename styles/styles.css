@@ -342,6 +342,7 @@ nav{
     font-weight: 600;
     line-height: 16px;
     padding: 8px;
+    cursor: pointer;
 }
 
 .notActive { 
