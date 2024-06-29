@@ -328,10 +328,10 @@ nav{
     font-weight: 600;
 }
 
-.cardNewsWrapperProduct a{
+.Active{
     min-height: 32px;
     min-width: 60px;
-    background: #2A5B45B2;
+    background-color: #2A5B45B2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -343,6 +343,12 @@ nav{
     line-height: 16px;
     padding: 8px;
 }
+
+.notActive { 
+    pointer-events: none; 
+    cursor: default; 
+    background-color:#E3DED7;
+} 
 
 #cardNewslinkIcon a{
     display: flex;

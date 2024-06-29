@@ -36,6 +36,7 @@ productsCards.forEach((card) => {
 
   cardNewsWrapperProduct.className = "cardNewsWrapperProduct";
   containProductInfo.className = "productInfo";
+  buttonCardAdd.className = "Active"
 
   imgCard.src = card.img;
   nameProductCard.innerHTML = card.nameProduct;
@@ -45,4 +46,11 @@ productsCards.forEach((card) => {
   card.available === true
     ? (buttonCardAdd.innerHTML = "Añadir")
     : (buttonCardAdd.innerHTML = "Agotado");
+
+    if (card.available === false) {
+      buttonCardAdd.classList.add("notActive")
+    }
+
+ 
+
 });
