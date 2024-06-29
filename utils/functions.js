@@ -11,7 +11,7 @@ export function selectedCardCreator(arrayCart) {
     const buttonCard = document.createElement("img");
     const counter = document.createElement("p");
 
-    cart.appendChild(card);
+    containSelectedProducts.appendChild(card);
     card.appendChild(img);
     card.appendChild(textContain);
     textContain.appendChild(textName);
@@ -20,12 +20,19 @@ export function selectedCardCreator(arrayCart) {
     containCounterBtn.appendChild(counter);
     containCounterBtn.appendChild(buttonCard);
 
+    card.className = "cardSelected";
+    textContain.className = "textContain";
+    containCounterBtn.className = "containCounterBtn";
+    img.className = "imgCardSelected";
+    textName.className = "textNameCardSelected";
+    buttonCard.className = "deleteCardSelected";
+
     img.src = newProduct.img;
     textName.innerHTML = newProduct.nameProduct;
     textPrice.innerHTML = newProduct.price;
     buttonCard.src =
       "https://img.icons8.com/?size=24&id=BsNkc7jnuBPU&format=png";
-    counter.innerHTML = 1;
+    counter.innerHTML = newProduct.count;
 
     buttonCard.addEventListener("click", (event) => {
       event.target.parentElement.parentElement.remove();
@@ -37,4 +44,20 @@ export function selectedCardCreator(arrayCart) {
     });
   });
   return;
+}
+
+export function productCount(productSelected, arrayCart) {
+  const productsCount = arrayCart.reduce((acc, product) => {
+    if (product.id === productSelected.id) {
+      product.count++;
+      return true;
+    }
+    return acc;
+  }, false);
+
+  if (!productsCount) {
+    arrayCart.push(productSelected);
+  }
+
+  return arrayCart;
 }
