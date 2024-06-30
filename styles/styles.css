@@ -102,6 +102,10 @@ nav{
     justify-content: center;
 }
 
+#bag{
+    cursor: pointer;
+}
+
 #hero{
     display: flex;
     justify-content: center;
