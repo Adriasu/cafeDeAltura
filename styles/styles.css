@@ -779,7 +779,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     color: #FFFFFF;
     font-weight: 600;
     font-size: 14px;
@@ -793,8 +793,7 @@ nav{
     width: 1200px;
     min-height: 201px;
     gap: 16px;
-    position: absolute;
-    top: 28.61px;
+    margin-top: 28.61px;
 }
 
 #logoFooter{
@@ -884,8 +883,6 @@ nav{
     background-color: #2B2A2B;
     width: 100%;
     height: 40px;
-    position: absolute;
-    top: 270.34px;
     display: flex;
     align-items: center;
     justify-content: center;
