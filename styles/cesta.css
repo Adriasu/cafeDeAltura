@@ -30,6 +30,27 @@
     border: solid 2px red;
 }
 
+#productsSend{
+    border: solid 2px blueviolet;
+    width: 792PX;
+    min-height: 415.32px;
+}
+
+#totalPrice{
+    border: 2px solid blue;
+    width: 384px;
+    height: 280px;
+    background-color:#F7F5F3;
+}
+
+
+
+
+
+
+
+
+
 
 #copyrightFooter{
     color: #FFFFFF;
