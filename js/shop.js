@@ -1,4 +1,4 @@
-import { counterBag, productCount } from "../utils/functions.js";
+import { counterBag, hideCart, productCount } from "../utils/functions.js";
 import { productsCards } from "../utils/products.js";
 
 const cardsProducts = document.createElement("section");
@@ -156,8 +156,10 @@ productsCards.forEach((card) => {
 
         console.log(total);
         totalPrice.innerHTML = `Total: ${total.toFixed(2)} €`;
+        hideCart(containSelectedProducts)
       });
     });
     counterBag(totalOfProducts);
   });
 });
+

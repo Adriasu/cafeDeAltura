@@ -1,4 +1,6 @@
 
+// contador de productos
+
 export function productCount(productSelected, arrayCart) {
   const productsCount = arrayCart.reduce((acc, product) => {
     if (product.id === productSelected.id) {
@@ -15,14 +17,38 @@ export function productCount(productSelected, arrayCart) {
   return arrayCart;
 }
 
+// contador de bolsa
+
 export function counterBag(totalOfProducts) {
   if (totalOfProducts > 0) {
     sumProducts.style.display = "flex"
     bag.src ="/assets/images/CarrLleno.png"
   } else {
     sumProducts.style.display = "none"
+
+
+    bag.src ="/assets/images/Carr.png"
+    cart.style.display = "none"
+  }
+}
+
+// ocultar carrito cuando se quede vacio
+
+export function hideCart(containSelectedProducts) {
+  if (containSelectedProducts.innerHTML === "") {
+    cart.style.display = "none"
+    sumProducts.style.display = "none"
     bag.src ="/assets/images/Carr.png"
   }
+}
+
+// reemplazar coas por puntos 
+
+export function replaceCommasWithPeriods(productSelected) {
+  productSelected.forEach((product) => {
+    product.productSelected
+  })
+  
 }
 
 //crear card del carrito:
