@@ -15,6 +15,16 @@ export function productCount(productSelected, arrayCart) {
   return arrayCart;
 }
 
+// borrar producto del array:
+
+export function deleteProduct(arrayCart) {
+  const deleteProductSelected = arrayCart.filter((product) => {
+    return product.id !== selectedProduct.id
+  })
+  return (arrayCart = deleteProductSelected)
+  
+}
+
 // contador de bolsa
 
 export function counterBag(totalOfProducts) {

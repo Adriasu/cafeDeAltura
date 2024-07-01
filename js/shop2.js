@@ -135,7 +135,11 @@ productsCards.forEach((card) => {
           selectedProduct.count--;
           counter.innerHTML = selectedProduct.count;
         } else {
-
+          event.target.parentElement.parentElement.remove();
+          const deleteProduct = arrayCart.findIndex((product) => {
+            return product.id === selectedProduct.id;
+          });
+          arrayCart.splice(deleteProduct, 1);
         }
       });
     });
