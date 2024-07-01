@@ -4,6 +4,7 @@ import { productsCards } from "../utils/products.js";
 const cardsProducts = document.createElement("section");
 const h2 = document.createElement("h2");
 const cart = document.createElement("div");
+const titleCart = document.createElement("h2")
 const containCardsProducts = document.createElement("div");
 const btnClear = document.createElement("a");
 const containSelectedProducts = document.createElement("div");
@@ -17,6 +18,7 @@ document
   .getElementsByTagName("body")[0]
   .insertBefore(cardsProducts, cardsConditions);
 document.getElementsByTagName("nav")[0].appendChild(cart);
+cart.appendChild(titleCart)
 cart.appendChild(containSelectedProducts);
 cart.appendChild(containBtnClearTotal);
 containBtnClearTotal.appendChild(totalPrice);
@@ -30,9 +32,10 @@ cardsProducts.appendChild(h2);
 cardsProducts.appendChild(containCardsProducts);
 btnClear.innerHTML = "Clear";
 
+titleCart.innerHTML = "Cesta"
 h2.innerHTML = "Últimos orígenes";
 containCardsProducts.id = "containCardsProducts";
-totalPrice.innerHTML = "Total: 0 €";
+totalPrice.innerHTML = "Ver cesta: 0 €";
 
 bag.addEventListener("click", () => {
   cart.style.display === "flex"
@@ -50,7 +53,7 @@ btnClear.addEventListener("click", () => {
   totalOfProducts = 0;
   sumProducts.innerHTML = totalOfProducts;
   total = 0;
-  totalPrice.innerHTML = "Total: 0 €";
+  totalPrice.innerHTML = "Ver cesta: 0 €";
   counterBag(totalOfProducts);
 });
 
@@ -85,6 +88,7 @@ productsCards.forEach((card) => {
     buttonCardAdd.classList.add("notActive");
     buttonCardAdd.classList.remove("hoverBtn");
     cardNewsWrapperProduct.classList.remove("hoverCards");
+    containProductInfo.style.opacity = "40%"
   }
   buttonCardAdd.addEventListener("click", () => {
     const productSelected = {
@@ -97,7 +101,7 @@ productsCards.forEach((card) => {
 
     let numPrice = productSelected.price.split(" ");
     total += parseInt(productSelected.count * numPrice[0]);
-    totalPrice.innerHTML = `Total: ${total.toFixed(2)} €`;
+    totalPrice.innerHTML = `Ver cesta: ${total.toFixed(2)} €`;
 
     totalOfProducts += productSelected.count;
     sumProducts.innerHTML = totalOfProducts;
@@ -155,7 +159,7 @@ productsCards.forEach((card) => {
         total -= parseInt(newProduct.count * numPrice[0]);
 
         console.log(total);
-        totalPrice.innerHTML = `Total: ${total.toFixed(2)} €`;
+        totalPrice.innerHTML = `Ver cesta: ${total.toFixed(2)} €`;
         hideCart(containSelectedProducts)
       });
     });

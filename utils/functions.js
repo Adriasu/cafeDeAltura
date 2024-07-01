@@ -51,6 +51,25 @@ export function replaceCommasWithPeriods(productSelected) {
   
 }
 
+// carrito vacio
+
+// export function emptyCart(containSelectedProducts) {
+//   if (condition) {
+    
+//   }
+  
+// }
+
+
+
+
+
+
+
+
+
+
+
 //crear card del carrito:
 
 // export function selectedCardCreator(arrayCart, totalOfProducts, sumProducts) {
