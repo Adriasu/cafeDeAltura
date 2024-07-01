@@ -3,59 +3,47 @@ import { productsCards } from "../utils/products.js";
 
 const cardsProducts = document.createElement("section");
 const h2 = document.createElement("h2");
-const cart = document.createElement("div");
-const titleCart = document.createElement("h2")
 const containCardsProducts = document.createElement("div");
-const btnClear = document.createElement("a");
+const cart = document.createElement("div");
+const titleCart = document.createElement("h2");
 const containSelectedProducts = document.createElement("div");
 const containBtnClearTotal = document.createElement("div");
+const btnClear = document.createElement("a");
 const totalPrice = document.createElement("p");
+
 const cardsConditions = document.getElementById("cardsConditions");
 const sumProducts = document.getElementById("sumProducts");
 const bag = document.getElementById("bag");
 
+// contenedor cards
+
 document
   .getElementsByTagName("body")[0]
   .insertBefore(cardsProducts, cardsConditions);
-document.getElementsByTagName("nav")[0].appendChild(cart);
-cart.appendChild(titleCart)
-cart.appendChild(containSelectedProducts);
-cart.appendChild(containBtnClearTotal);
-containBtnClearTotal.appendChild(totalPrice);
-containBtnClearTotal.appendChild(btnClear);
-
-containBtnClearTotal.id = "containBtnClearTotal";
-containSelectedProducts.id = "containSelectedProducts";
-cart.id = "cart";
 cardsProducts.id = "cardsProducts";
 cardsProducts.appendChild(h2);
-cardsProducts.appendChild(containCardsProducts);
-btnClear.innerHTML = "Clear";
-
-titleCart.innerHTML = "Cesta"
 h2.innerHTML = "Últimos orígenes";
+cardsProducts.appendChild(containCardsProducts);
 containCardsProducts.id = "containCardsProducts";
-totalPrice.innerHTML = "Ver cesta: 0 €";
 
-bag.addEventListener("click", () => {
-  cart.style.display === "flex"
-    ? (cart.style.display = "none")
-    : (cart.style.display = "flex");
-});
+// carrito
+
+document.getElementsByTagName("nav")[0].appendChild(cart);
+cart.id = "cart";
+cart.appendChild(titleCart);
+titleCart.innerHTML = "Cesta";
+cart.appendChild(containSelectedProducts);
+containSelectedProducts.id = "containSelectedProducts";
+cart.appendChild(containBtnClearTotal);
+containBtnClearTotal.id = "containBtnClearTotal";
+containBtnClearTotal.appendChild(totalPrice);
+totalPrice.innerHTML = "Check-Out: 0 €";
+containBtnClearTotal.appendChild(btnClear);
+btnClear.innerHTML = "Clear";
 
 const arrayCart = [];
 let total = 0;
 let totalOfProducts = 0;
-
-btnClear.addEventListener("click", () => {
-  containSelectedProducts.innerHTML = "";
-  arrayCart.splice(0, arrayCart.length);
-  totalOfProducts = 0;
-  sumProducts.innerHTML = totalOfProducts;
-  total = 0;
-  totalPrice.innerHTML = "check out: 0 €";
-  counterBag(totalOfProducts);
-});
 
 productsCards.forEach((card) => {
   const cardNewsWrapperProduct = document.createElement("div");
@@ -79,17 +67,16 @@ productsCards.forEach((card) => {
   imgCard.src = card.img;
   nameProductCard.innerHTML = card.nameProduct;
   priceProductCard.innerHTML = card.price;
-
   card.available === true
     ? (buttonCardAdd.innerHTML = "Añadir")
     : (buttonCardAdd.innerHTML = "Agotado");
-
   if (card.available === false) {
     buttonCardAdd.classList.add("notActive");
     buttonCardAdd.classList.remove("hoverBtn");
     cardNewsWrapperProduct.classList.remove("hoverCards");
-    containProductInfo.style.opacity = "40%"
+    containProductInfo.style.opacity = "40%";
   }
+
   buttonCardAdd.addEventListener("click", () => {
     const productSelected = {
       id: card.id,
@@ -99,25 +86,19 @@ productsCards.forEach((card) => {
       count: 1,
     };
 
-    let numPrice = productSelected.price.split(" ");
-    total += parseInt(productSelected.count * numPrice[0]);
-    totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
-
-    totalOfProducts += productSelected.count;
-    sumProducts.innerHTML = totalOfProducts;
-
     productCount(productSelected, arrayCart);
     containSelectedProducts.innerHTML = "";
 
-    arrayCart.forEach((newProduct) => {
+    arrayCart.forEach((selectedProduct) => {
       const card = document.createElement("section");
       const img = document.createElement("img");
       const textContain = document.createElement("div");
       const textName = document.createElement("p");
       const textPrice = document.createElement("p");
       const containCounterBtn = document.createElement("div");
-      const buttonCard = document.createElement("img");
       const counter = document.createElement("p");
+      const btnAdd = document.createElement("img");
+      const btnSubtract = document.createElement("img");
 
       containSelectedProducts.appendChild(card);
       card.appendChild(img);
@@ -125,45 +106,38 @@ productsCards.forEach((card) => {
       textContain.appendChild(textName);
       textContain.appendChild(textPrice);
       card.appendChild(containCounterBtn);
+      containCounterBtn.appendChild(btnAdd);
       containCounterBtn.appendChild(counter);
-      containCounterBtn.appendChild(buttonCard);
+      containCounterBtn.appendChild(btnSubtract);
 
       card.className = "cardSelected";
       textContain.className = "textContain";
       containCounterBtn.className = "containCounterBtn";
       img.className = "imgCardSelected";
       textName.className = "textNameCardSelected";
-      buttonCard.className = "deleteCardSelected";
+      btnAdd.className = "btnAdd";
+      btnSubtract.className = "btnSubtract";
 
-      img.src = newProduct.img;
-      textName.innerHTML = newProduct.nameProduct;
-      textPrice.innerHTML = newProduct.price;
-      buttonCard.src =
-        "https://img.icons8.com/?size=24&id=BsNkc7jnuBPU&format=png";
-      counter.innerHTML = newProduct.count;
+      img.src = selectedProduct.img;
+      textName.innerHTML = selectedProduct.nameProduct;
+      textPrice.innerHTML = selectedProduct.price;
+      btnAdd.src = "/assets/images/heroicons-outline_plus-sm.png";
+      counter.innerHTML = selectedProduct.count;
+      btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
 
-      buttonCard.addEventListener("click", (event) => {
-        event.target.parentElement.parentElement.remove();
+      btnAdd.addEventListener("click", () => {
+        selectedProduct.count++;
+        counter.innerHTML = selectedProduct.count;
+      });
 
-        const deleteProduct = arrayCart.findIndex((product) => {
-          return product.id === newProduct.id;
-        });
-        arrayCart.splice(deleteProduct, 1);
+      btnSubtract.addEventListener("click", (event) => {
+        if (selectedProduct.count > 1) {
+          selectedProduct.count--;
+          counter.innerHTML = selectedProduct.count;
+        } else {
 
-        totalOfProducts -= newProduct.count;
-        sumProducts.innerHTML = totalOfProducts;
-
-        console.log(newProduct.count);
-        console.log(numPrice[0]);
-
-        total -= parseInt(newProduct.count * numPrice[0]);
-
-        console.log(total);
-        totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
-        hideCart(containSelectedProducts)
+        }
       });
     });
-    counterBag(totalOfProducts);
   });
 });
-

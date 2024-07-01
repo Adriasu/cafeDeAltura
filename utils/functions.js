@@ -1,4 +1,3 @@
-
 // contador de productos
 
 export function productCount(productSelected, arrayCart) {
@@ -13,7 +12,6 @@ export function productCount(productSelected, arrayCart) {
   if (!productsCount) {
     arrayCart.push(productSelected);
   }
-
   return arrayCart;
 }
 
@@ -25,8 +23,6 @@ export function counterBag(totalOfProducts) {
     bag.src ="/assets/images/CarrLleno.png"
   } else {
     sumProducts.style.display = "none"
-
-
     bag.src ="/assets/images/Carr.png"
     cart.style.display = "none"
   }
@@ -42,7 +38,7 @@ export function hideCart(containSelectedProducts) {
   }
 }
 
-// reemplazar coas por puntos 
+// reemplazar comas por puntos 
 
 export function replaceCommasWithPeriods(productSelected) {
   productSelected.forEach((product) => {
