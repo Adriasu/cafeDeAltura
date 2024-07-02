@@ -15,15 +15,6 @@ export function productCount(productSelected, arrayCart) {
   return arrayCart;
 }
 
-// borrar producto del array:
-
-export function deleteProduct(arrayCart) {
-  const deleteProductSelected = arrayCart.filter((product) => {
-    return product.id !== selectedProduct.id
-  })
-  return (arrayCart = deleteProductSelected)
-  
-}
 
 // contador de bolsa
 
@@ -34,7 +25,7 @@ export function counterBag(totalOfProducts) {
   } else {
     sumProducts.style.display = "none"
     bag.src ="/assets/images/Carr.png"
-    cart.style.display = "none"
+    //cart.style.display = "none"
   }
 }
 
@@ -42,7 +33,7 @@ export function counterBag(totalOfProducts) {
 
 export function hideCart(containSelectedProducts) {
   if (containSelectedProducts.innerHTML === "") {
-    cart.style.display = "none"
+    //cart.style.display = "none"
     sumProducts.style.display = "none"
     bag.src ="/assets/images/Carr.png"
   }
@@ -57,15 +48,15 @@ export function replaceCommasWithPeriods(productSelected) {
   
 }
 
-// carrito vacio
+// texto carrito vacío
 
-// export function emptyCart(containSelectedProducts) {
-//   if (condition) {
-    
-//   }
-  
-// }
-
+export function cartEmpty(arrayCart, containSelectedProducts) {
+  if (arrayCart.length === 0) {
+    containSelectedProducts.innerHTML= `
+      <p class="cartEmpty">El carrito está vacío.</p>
+    `
+  }
+}
 
 
 

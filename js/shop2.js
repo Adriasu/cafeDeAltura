@@ -1,4 +1,4 @@
-import { counterBag, hideCart, productCount } from "../utils/functions.js";
+import { cartEmpty, counterBag, hideCart, productCount } from "../utils/functions.js";
 import { productsCards } from "../utils/products.js";
 
 const cardsProducts = document.createElement("section");
@@ -9,7 +9,7 @@ const titleCart = document.createElement("h2");
 const containSelectedProducts = document.createElement("div");
 const containBtnClearTotal = document.createElement("div");
 const btnClear = document.createElement("a");
-const totalPrice = document.createElement("p");
+const totalPrice = document.createElement("a");
 
 const cardsConditions = document.getElementById("cardsConditions");
 const sumProducts = document.getElementById("sumProducts");
@@ -38,12 +38,34 @@ cart.appendChild(containBtnClearTotal);
 containBtnClearTotal.id = "containBtnClearTotal";
 containBtnClearTotal.appendChild(totalPrice);
 totalPrice.innerHTML = "Check-Out: 0 €";
+totalPrice.href = "/pages/cesta.html"
 containBtnClearTotal.appendChild(btnClear);
 btnClear.innerHTML = "Clear";
+
+// ver/ocultar carrrito
+
+bag.addEventListener("click", () => {
+  cart.style.display === "flex"
+    ? (cart.style.display = "none")
+    : (cart.style.display = "flex");
+});
 
 const arrayCart = [];
 let total = 0;
 let totalOfProducts = 0;
+
+// btnClear
+
+btnClear.addEventListener("click", () => {
+  containSelectedProducts.innerHTML = "";
+  arrayCart.splice(0, arrayCart.length);
+  cartEmpty(arrayCart, containSelectedProducts)
+  totalOfProducts = 0;
+  sumProducts.innerHTML = totalOfProducts;
+  total = 0;
+  totalPrice.innerHTML = "check out: 0,00 €";
+  counterBag(totalOfProducts);
+});
 
 productsCards.forEach((card) => {
   const cardNewsWrapperProduct = document.createElement("div");
@@ -66,7 +88,7 @@ productsCards.forEach((card) => {
 
   imgCard.src = card.img;
   nameProductCard.innerHTML = card.nameProduct;
-  priceProductCard.innerHTML = card.price;
+  priceProductCard.innerHTML = card.price.replace(".", ",");
   card.available === true
     ? (buttonCardAdd.innerHTML = "Añadir")
     : (buttonCardAdd.innerHTML = "Agotado");
@@ -85,6 +107,12 @@ productsCards.forEach((card) => {
       price: card.price,
       count: 1,
     };
+
+    totalOfProducts += productSelected.count;
+    sumProducts.innerHTML = totalOfProducts;
+
+    total += parseInt(productSelected.count * productSelected.price.split(" ")[0]);
+    totalPrice.innerHTML = `check out: ${total.toFixed(2).replace(".", ",")} €`;
 
     productCount(productSelected, arrayCart);
     containSelectedProducts.innerHTML = "";
@@ -120,7 +148,7 @@ productsCards.forEach((card) => {
 
       img.src = selectedProduct.img;
       textName.innerHTML = selectedProduct.nameProduct;
-      textPrice.innerHTML = selectedProduct.price;
+      textPrice.innerHTML = selectedProduct.price.replace(".", ",");
       btnAdd.src = "/assets/images/heroicons-outline_plus-sm.png";
       counter.innerHTML = selectedProduct.count;
       btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
@@ -141,7 +169,23 @@ productsCards.forEach((card) => {
           });
           arrayCart.splice(deleteProduct, 1);
         }
+        totalOfProducts -= productSelected.count;
+        sumProducts.innerHTML = totalOfProducts;
+
+        console.log(productSelected.price.split(" ")[0]);
+
+        total -= parseInt(selectedProduct.price.split(" ")[0]);
+        totalPrice.innerHTML = `check out: ${total.toFixed(2).replace(".", ",")} €`;
+        
+        console.log(total);
+        hideCart(containSelectedProducts)
+        cartEmpty(arrayCart, containSelectedProducts)
+
       });
     });
+    counterBag(totalOfProducts);
   });
 });
+
+cartEmpty(arrayCart, containSelectedProducts)
+
