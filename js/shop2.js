@@ -88,7 +88,7 @@ productsCards.forEach((card) => {
 
   imgCard.src = card.img;
   nameProductCard.innerHTML = card.nameProduct;
-  priceProductCard.innerHTML = card.price.replace(".", ",");
+  priceProductCard.innerHTML = `${card.price.toFixed(2)} €`;
   card.available === true
     ? (buttonCardAdd.innerHTML = "Añadir")
     : (buttonCardAdd.innerHTML = "Agotado");
@@ -111,8 +111,8 @@ productsCards.forEach((card) => {
     totalOfProducts += productSelected.count;
     sumProducts.innerHTML = totalOfProducts;
 
-    total += parseInt(productSelected.count * productSelected.price.split(" ")[0]);
-    totalPrice.innerHTML = `check out: ${total.toFixed(2).replace(".", ",")} €`;
+    total += productSelected.count * productSelected.price
+    totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
 
     productCount(productSelected, arrayCart);
     containSelectedProducts.innerHTML = "";
@@ -148,7 +148,7 @@ productsCards.forEach((card) => {
 
       img.src = selectedProduct.img;
       textName.innerHTML = selectedProduct.nameProduct;
-      textPrice.innerHTML = selectedProduct.price.replace(".", ",");
+      textPrice.innerHTML = `${selectedProduct.price.toFixed(2)} €`;
       btnAdd.src = "/assets/images/heroicons-outline_plus-sm.png";
       counter.innerHTML = selectedProduct.count;
       btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
@@ -172,12 +172,9 @@ productsCards.forEach((card) => {
         totalOfProducts -= productSelected.count;
         sumProducts.innerHTML = totalOfProducts;
 
-        console.log(productSelected.price.split(" ")[0]);
-
-        total -= parseInt(selectedProduct.price.split(" ")[0]);
-        totalPrice.innerHTML = `check out: ${total.toFixed(2).replace(".", ",")} €`;
+        total -= selectedProduct.price;
+        totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
         
-        console.log(total);
         hideCart(containSelectedProducts)
         cartEmpty(arrayCart, containSelectedProducts)
 
