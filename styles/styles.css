@@ -5,6 +5,10 @@
     font-family: Outfit;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 nav{
     background-color: #2B2A2B;
     min-height: 64px;
@@ -54,8 +58,15 @@ nav{
 
 #menuWrapperNav li{
     padding: 8px;
-    cursor: pointer;
+    
 }
+
+#menuWrapperNav a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
 
 #menuWrapperNav li:hover{
     background-color: #F7F5F31A;

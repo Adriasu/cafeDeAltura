@@ -6,7 +6,7 @@
 }
 
 #cardsbag {
-    height: 772px;
+    min-height: 772px;
     margin-top: 64px;
     display: flex;
     flex-direction: column;
