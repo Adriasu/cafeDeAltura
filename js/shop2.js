@@ -42,7 +42,7 @@ containSelectedProducts.id = "containSelectedProducts";
 cart.appendChild(containBtnClearTotal);
 containBtnClearTotal.id = "containBtnClearTotal";
 containBtnClearTotal.appendChild(totalPrice);
-totalPrice.innerHTML = "Check-Out: 0 €";
+totalPrice.innerHTML = "Check-Out: 0.00 €";
 totalPrice.href = "/pages/cesta.html";
 containBtnClearTotal.appendChild(btnClear);
 btnClear.innerHTML = "Clear";
@@ -58,19 +58,6 @@ bag.addEventListener("click", () => {
 const arrayCart = [];
 let total = 0;
 let totalOfProducts = 0;
-
-// btnClear
-
-btnClear.addEventListener("click", () => {
-  containSelectedProducts.innerHTML = "";
-  arrayCart.splice(0, arrayCart.length);
-  cartEmpty(arrayCart, containSelectedProducts);
-  totalOfProducts = 0;
-  sumProducts.innerHTML = totalOfProducts;
-  total = 0;
-  totalPrice.innerHTML = "check out: 0,00 €";
-  counterBag(totalOfProducts);
-});
 
 productsCards.forEach((card) => {
   const cardNewsWrapperProduct = document.createElement("div");
@@ -117,12 +104,14 @@ productsCards.forEach((card) => {
     sumProducts.innerHTML = totalOfProducts;
 
     total += productSelected.count * productSelected.price;
-    totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
+    totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
 
     productCount(productSelected, arrayCart);
+    localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
+    const arrayCartLS = JSON.parse(localStorage.getItem("arrayCart"))
     containSelectedProducts.innerHTML = "";
 
-    arrayCart.forEach((selectedProduct) => {
+    arrayCartLS.forEach((selectedProduct) => {
       const card = document.createElement("section");
       const img = document.createElement("img");
       const textContain = document.createElement("div");
@@ -166,7 +155,7 @@ productsCards.forEach((card) => {
         counter.innerHTML = selectedProduct.count;
 
         total += selectedProduct.price;
-        totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
+        totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
       });
 
       btnSubtract.addEventListener("click", (event) => {
@@ -179,12 +168,13 @@ productsCards.forEach((card) => {
             return product.id === selectedProduct.id;
           });
           arrayCart.splice(deleteProduct, 1);
+          localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
         }
         totalOfProducts -= productSelected.count;
         sumProducts.innerHTML = totalOfProducts;
 
         total -= selectedProduct.price;
-        totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
+        totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
 
         hideCart(containSelectedProducts);
         cartEmpty(arrayCart, containSelectedProducts);
@@ -195,3 +185,18 @@ productsCards.forEach((card) => {
 });
 
 cartEmpty(arrayCart, containSelectedProducts);
+
+// btnClear
+
+btnClear.addEventListener("click", () => {
+  containSelectedProducts.innerHTML = "";
+  arrayCart.splice(0, arrayCart.length);
+  cartEmpty(arrayCart, containSelectedProducts);
+  totalOfProducts = 0;
+  sumProducts.innerHTML = totalOfProducts;
+  total = 0;
+  totalPrice.innerHTML = "Check-Out: 0.00 €";
+  counterBag(totalOfProducts);
+  localStorage.clear()
+  localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
+});

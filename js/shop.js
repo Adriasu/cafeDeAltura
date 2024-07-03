@@ -1,4 +1,4 @@
-import { btnClearFn, createCart } from "../utils/cart.js";
+import { btnClearFn, createCart, viewHideCart } from "../utils/cart.js";
 import { createCards } from "../utils/functions.js";
 import { productsCards } from "../utils/products.js";
 
@@ -24,25 +24,28 @@ containCardsProducts.id = "containCardsProducts";
 // carrito
 
 createCart();
-
-// ver/ocultar carrrito
-
-bag.addEventListener("click", () => {
-  cart.style.display === "flex"
-    ? (cart.style.display = "none")
-    : (cart.style.display = "flex");
-});
+viewHideCart(bag)
 
 // array y contadores
 
 const arrayCart = [];
 JSON.stringify(arrayCart);
 localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
-const arrayCartLS = JSON.parse(localStorage.getItem("arrayCart"));
-console.log(arrayCartLS);
+
 let total = 0;
 let totalOfProducts = 0;
 
 // cards
 
-createCards(productsCards);
+const totalPrice = document.getElementById("totalPrice")
+
+createCards(productsCards, totalOfProducts, total, arrayCart);
+
+const arrayCartLS = JSON.parse(localStorage.getItem("arrayCart"));
+
+console.log(arrayCartLS);
+
+
+
+
+

@@ -17,11 +17,20 @@ export function createCart() {
   cart.appendChild(containBtnClearTotal);
   containBtnClearTotal.id = "containBtnClearTotal";
   containBtnClearTotal.appendChild(totalPrice);
+  totalPrice.id = "totalPrice"
   totalPrice.innerHTML = "Check-Out: 0 €";
   totalPrice.href = "/pages/cesta.html";
   containBtnClearTotal.appendChild(btnClear);
   btnClear.id = "btnClear"
   btnClear.innerHTML = "Clear";
+}
+
+export function viewHideCart(bag) {
+  bag.addEventListener("click", () => {
+    cart.style.display === "flex"
+      ? (cart.style.display = "none")
+      : (cart.style.display = "flex");
+  });
 }
 
 export function btnClearFn(btn) {
