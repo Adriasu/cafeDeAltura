@@ -1,4 +1,9 @@
-import { cartEmpty, counterBag, hideCart, productCount } from "../utils/functions.js";
+import {
+  cartEmpty,
+  counterBag,
+  hideCart,
+  productCount,
+} from "../utils/functions.js";
 import { productsCards } from "../utils/products.js";
 
 const cardsProducts = document.createElement("section");
@@ -38,7 +43,7 @@ cart.appendChild(containBtnClearTotal);
 containBtnClearTotal.id = "containBtnClearTotal";
 containBtnClearTotal.appendChild(totalPrice);
 totalPrice.innerHTML = "Check-Out: 0 €";
-totalPrice.href = "/pages/cesta.html"
+totalPrice.href = "/pages/cesta.html";
 containBtnClearTotal.appendChild(btnClear);
 btnClear.innerHTML = "Clear";
 
@@ -59,7 +64,7 @@ let totalOfProducts = 0;
 btnClear.addEventListener("click", () => {
   containSelectedProducts.innerHTML = "";
   arrayCart.splice(0, arrayCart.length);
-  cartEmpty(arrayCart, containSelectedProducts)
+  cartEmpty(arrayCart, containSelectedProducts);
   totalOfProducts = 0;
   sumProducts.innerHTML = totalOfProducts;
   total = 0;
@@ -111,7 +116,7 @@ productsCards.forEach((card) => {
     totalOfProducts += productSelected.count;
     sumProducts.innerHTML = totalOfProducts;
 
-    total += productSelected.count * productSelected.price
+    total += productSelected.count * productSelected.price;
     totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
 
     productCount(productSelected, arrayCart);
@@ -154,9 +159,13 @@ productsCards.forEach((card) => {
       btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
 
       btnAdd.addEventListener("click", () => {
+        totalOfProducts++;
+        sumProducts.innerHTML = totalOfProducts;
+
         selectedProduct.count++;
         counter.innerHTML = selectedProduct.count;
-        total += selectedProduct.price
+
+        total += selectedProduct.price;
         totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
       });
 
@@ -171,20 +180,18 @@ productsCards.forEach((card) => {
           });
           arrayCart.splice(deleteProduct, 1);
         }
-        totalOfProducts -= selectedProduct.count;
+        totalOfProducts -= productSelected.count;
         sumProducts.innerHTML = totalOfProducts;
 
         total -= selectedProduct.price;
         totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
-        
-        hideCart(containSelectedProducts)
-        cartEmpty(arrayCart, containSelectedProducts)
 
+        hideCart(containSelectedProducts);
+        cartEmpty(arrayCart, containSelectedProducts);
       });
     });
     counterBag(totalOfProducts);
   });
 });
 
-cartEmpty(arrayCart, containSelectedProducts)
-
+cartEmpty(arrayCart, containSelectedProducts);

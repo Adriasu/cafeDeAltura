@@ -1,3 +1,42 @@
+// creacion de cards
+
+export function createCards(productsCards) {
+  productsCards.forEach((card) => {
+    const cardNewsWrapperProduct = document.createElement("div");
+    const imgCard = document.createElement("img");
+    const containProductInfo = document.createElement("div");
+    const nameProductCard = document.createElement("p");
+    const priceProductCard = document.createElement("p");
+    const buttonCardAdd = document.createElement("a");
+
+    containCardsProducts.appendChild(cardNewsWrapperProduct);
+    cardNewsWrapperProduct.appendChild(imgCard);
+    cardNewsWrapperProduct.appendChild(containProductInfo);
+    containProductInfo.appendChild(nameProductCard);
+    containProductInfo.appendChild(priceProductCard);
+    cardNewsWrapperProduct.appendChild(buttonCardAdd);
+
+    cardNewsWrapperProduct.className = "cardNewsWrapperProduct hoverCards";
+    containProductInfo.className = "productInfo";
+    buttonCardAdd.className = "Active hoverBtn";
+    buttonCardAdd.id = "buttonCardAdd"
+
+    imgCard.src = card.img;
+    nameProductCard.innerHTML = card.nameProduct;
+    priceProductCard.innerHTML = `${card.price.toFixed(2)} €`;
+    card.available === true
+      ? (buttonCardAdd.innerHTML = "Añadir")
+      : (buttonCardAdd.innerHTML = "Agotado");
+    if (card.available === false) {
+      buttonCardAdd.classList.add("notActive");
+      buttonCardAdd.classList.remove("hoverBtn");
+      cardNewsWrapperProduct.classList.remove("hoverCards");
+      containProductInfo.style.opacity = "40%";
+    }
+  });
+  return
+}
+
 // contador de productos
 
 export function productCount(productSelected, arrayCart) {
@@ -15,62 +54,44 @@ export function productCount(productSelected, arrayCart) {
   return arrayCart;
 }
 
-
 // contador de bolsa
 
 export function counterBag(totalOfProducts) {
   if (totalOfProducts > 0) {
-    sumProducts.style.display = "flex"
-    bag.src ="/assets/images/CarrLleno.png"
+    sumProducts.style.display = "flex";
+    bag.src = "/assets/images/CarrLleno.png";
   } else {
-    sumProducts.style.display = "none"
-    bag.src ="/assets/images/Carr.png"
-    //cart.style.display = "none"
+    sumProducts.style.display = "none";
+    bag.src = "/assets/images/Carr.png";
   }
+  return
 }
 
 // ocultar carrito cuando se quede vacio
 
 export function hideCart(containSelectedProducts) {
   if (containSelectedProducts.innerHTML === "") {
-    //cart.style.display = "none"
-    sumProducts.style.display = "none"
-    bag.src ="/assets/images/Carr.png"
+    sumProducts.style.display = "none";
+    bag.src = "/assets/images/Carr.png";
   }
-}
-
-// reemplazar comas por puntos 
-
-export function replaceCommasWithPeriods(productSelected) {
-  productSelected.forEach((product) => {
-    product.productSelected
-  })
-  
+  return
 }
 
 // texto carrito vacío
 
 export function cartEmpty(arrayCart, containSelectedProducts) {
   if (arrayCart.length === 0) {
-    containSelectedProducts.innerHTML= `
+    containSelectedProducts.innerHTML = `
       <p class="cartEmpty">El carrito está vacío.</p>
-    `
+    `;
   }
+  return
 }
-
-
-
-
-
-
-
-
-
 
 //crear card del carrito:
 
 // export function selectedCardCreator(arrayCart, totalOfProducts, sumProducts) {
-  
+
 //   arrayCart.forEach((newProduct) => {
 //     const card = document.createElement("section");
 //     const img = document.createElement("img");
@@ -120,4 +141,3 @@ export function cartEmpty(arrayCart, containSelectedProducts) {
 //   });
 //   return;
 // }
-
