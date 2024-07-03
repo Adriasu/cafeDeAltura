@@ -156,6 +156,8 @@ productsCards.forEach((card) => {
       btnAdd.addEventListener("click", () => {
         selectedProduct.count++;
         counter.innerHTML = selectedProduct.count;
+        total += selectedProduct.price
+        totalPrice.innerHTML = `check out: ${total.toFixed(2)} €`;
       });
 
       btnSubtract.addEventListener("click", (event) => {
@@ -169,7 +171,7 @@ productsCards.forEach((card) => {
           });
           arrayCart.splice(deleteProduct, 1);
         }
-        totalOfProducts -= productSelected.count;
+        totalOfProducts -= selectedProduct.count;
         sumProducts.innerHTML = totalOfProducts;
 
         total -= selectedProduct.price;

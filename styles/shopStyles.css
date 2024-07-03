@@ -5,6 +5,11 @@
     font-family: Outfit;
 }
 
+#imgNavIndex{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 #containBagCounter{
     display: flex;
     align-items: center;
