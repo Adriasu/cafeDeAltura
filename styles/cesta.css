@@ -5,6 +5,10 @@
     font-family: Outfit;
 }
 
+body{
+    height: 100vh;
+}
+
 #cardsbag {
     min-height: 772px;
     margin-top: 64px;
@@ -43,15 +47,8 @@
     background-color:#F7F5F3;
 }
 
-
-
-
-
-
-
-
-
-
 #copyrightFooter{
     color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
 }

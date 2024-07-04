@@ -208,7 +208,6 @@ productsCards.forEach((card) => {
 
     productCount(productSelected, arrayCart);
     localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
-    const arrayCartLS = JSON.parse(localStorage.getItem("arrayCart"));
     containSelectedProducts.innerHTML = "";
 
     arrayCart.forEach((selectedProduct) => {

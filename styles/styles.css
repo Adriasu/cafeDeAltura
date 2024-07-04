@@ -30,6 +30,11 @@ nav{
     align-items: center;
 }
 
+#imgNavIndex{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 #logo p{
     font-size: 23.46px;
     font-weight: 400;
@@ -65,8 +70,6 @@ nav{
     text-decoration: none;
     color: #FFFFFF;
 }
-
-
 
 #menuWrapperNav li:hover{
     background-color: #F7F5F31A;
@@ -879,7 +882,12 @@ nav{
     top: 2.61px;
     left: 577px;
 }
-#menuWrapperFooter li,
+
+#menuWrapperFooter a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 #menuWrapperFooterPrivacy li{
     cursor: pointer;
 }
