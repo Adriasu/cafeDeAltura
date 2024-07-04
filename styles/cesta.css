@@ -32,16 +32,14 @@ body{
     min-height: 415.32px;
     display: flex;
     gap: 24px;
-    border: solid 2px red;
 }
 
 #productsSend{
-    border: solid 2px blueviolet;
     width: 792PX;
     min-height: 415.32px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     gap: 16px;
     padding: 8px;
 }
@@ -104,11 +102,104 @@ body{
 
 
 #totalPrice{
-    border: 2px solid blue;
     width: 384px;
     height: 280px;
     background-color:#F7F5F3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px;
 }
+
+#details{
+    display: flex;
+    flex-direction: column;
+    min-width: 336px;
+    min-height: 176px;
+    gap: 16px;
+}
+
+#details h3{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    width: 129px;
+    height: 24px;
+}
+
+#details hr{
+    border: 1px solid #E3DED7
+}
+
+#carrDetailsSubTotal,
+#carrDetailsSend,
+#carrDetailsTotal{
+    display: flex;
+    justify-content: space-between;
+    width: 336px;
+}
+
+.subTotalAndSend{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.textblodTotalCarr{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+#cotainTotalPriceIVA{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 8px;
+}
+
+#textIVA {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+#buttonWrapperTotal{
+    width: 310px;
+    height: 40px;
+    display: flex;
+    gap: 16px;
+}
+
+#btnCheckOut{
+    width: 129px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#2A5B45;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+#btnContinueShopping{
+    width: 165px;
+    height: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:#2A5B45;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
 
 #copyrightFooter{
     color: #FFFFFF;

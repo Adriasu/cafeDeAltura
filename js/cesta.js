@@ -34,6 +34,9 @@ const textPriceSend = document.createElement("p")
 const dividerLineTotalTwo = document.createElement("hr")
 const carrDetailsTotal = document.createElement("div")
 const textTotal = document.createElement("p")
+const cotainTotalPriceIVA = document.createElement("div")
+const textPriceTotal = document.createElement("p")
+const textIVA = document.createElement("p")
 const buttonWrapperTotal = document.createElement("div")
 const btnCheckOut = document.createElement("a")
 const btnContinueShopping = document.createElement("a")
@@ -68,9 +71,17 @@ totalPrice.appendChild(details)
 details.appendChild(totalCart)
 details.appendChild(dividerLineTotalOne)
 details.appendChild(carrDetailsSubTotal)
+carrDetailsSubTotal.appendChild(textSubTotal)
+carrDetailsSubTotal.appendChild(textPriceSubTotal)
 details.appendChild(carrDetailsSend)
+carrDetailsSend.appendChild(textSend)
+carrDetailsSend.appendChild(textPriceSend)
 details.appendChild(dividerLineTotalTwo)
 details.appendChild(carrDetailsTotal)
+carrDetailsTotal.appendChild(textTotal)
+carrDetailsTotal.appendChild(cotainTotalPriceIVA)
+cotainTotalPriceIVA.appendChild(textPriceTotal)
+cotainTotalPriceIVA.appendChild(textIVA)
 totalPrice.appendChild(buttonWrapperTotal)
 buttonWrapperTotal.appendChild(btnCheckOut)
 buttonWrapperTotal.appendChild(btnContinueShopping)
@@ -89,6 +100,22 @@ containInputUrgent.className = "selectorDelivery"
 containTextSendFree.className = "containText"
 containTextSendUrgent.className = "containText"
 containTextSendUrgent.id = "containTextSendUrgent"
+details.id = "details"
+carrDetailsSubTotal.id = "carrDetailsSubTotal"
+carrDetailsSend.id = "carrDetailsSend"
+carrDetailsTotal.id = "carrDetailsTotal"
+cotainTotalPriceIVA.id = "cotainTotalPriceIVA"
+buttonWrapperTotal.id = "buttonWrapperTotal"
+textSubTotal.className = "subTotalAndSend"
+textSend.className = "subTotalAndSend"
+textPriceSubTotal.className = "textblodTotalCarr"
+textPriceSend.className = "textblodTotalCarr"
+textTotal.className = "textblodTotalCarr"
+textPriceTotal.className = "textblodTotalCarr"
+textIVA.id = "textIVA"
+btnCheckOut.id = "btnCheckOut"
+btnContinueShopping.id = "btnContinueShopping"
+
 
 // Titulos
 
@@ -118,3 +145,18 @@ deliveryTimeUrgent.setAttribute("for", "urgent");
 descriptionDeliveryTimeUrgent.innerHTML =
   "Recibe tu pedido en las siguientes 24h (Para pedidos realizados antes de las 13:00).";
 valueSendUrgent.innerHTML = "9,00 €";
+
+// Seccion del total
+
+totalCart.innerHTML = "Total del carrito"
+textSubTotal.innerHTML ="SUBTOTAL"
+textPriceSubTotal.innerHTML ="0.00 €"
+textSend.innerHTML ="ENVÍO"
+textPriceSend.innerHTML = "GRATIS"
+textTotal.innerHTML = "TOTAL"
+textPriceTotal.innerHTML ="0.00 €"
+textIVA.innerHTML = "Incluye 3,78€ de IVA"
+btnCheckOut.innerHTML ="Ir a checkout"
+btnContinueShopping.innerHTML="Seguir comprando"
+
+
