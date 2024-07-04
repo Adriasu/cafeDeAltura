@@ -105,6 +105,7 @@ arrayCart.forEach((selectedProduct) => {
     localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
 
     selectedProduct.count++;
+    localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
     counter.innerHTML = selectedProduct.count;
 
     total += selectedProduct.price;
@@ -115,6 +116,7 @@ arrayCart.forEach((selectedProduct) => {
   btnSubtract.addEventListener("click", (event) => {
     if (selectedProduct.count > 1) {
       selectedProduct.count--;
+      localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
       counter.innerHTML = selectedProduct.count;
     } else {
       event.target.parentElement.parentElement.remove();
@@ -195,7 +197,7 @@ productsCards.slice(0, 4).forEach((card) => {
     const arrayCartLS = JSON.parse(localStorage.getItem("arrayCart"));
     containSelectedProducts.innerHTML = "";
 
-    arrayCartLS.forEach((selectedProduct) => {
+    arrayCart.forEach((selectedProduct) => {
       const card = document.createElement("section");
       const img = document.createElement("img");
       const textContain = document.createElement("div");
@@ -237,6 +239,7 @@ productsCards.slice(0, 4).forEach((card) => {
         localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts))
 
         selectedProduct.count++;
+        localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
         counter.innerHTML = selectedProduct.count;
 
         total += selectedProduct.price;
@@ -247,6 +250,7 @@ productsCards.slice(0, 4).forEach((card) => {
       btnSubtract.addEventListener("click", (event) => {
         if (selectedProduct.count > 1) {
           selectedProduct.count--;
+          localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
           counter.innerHTML = selectedProduct.count;
         } else {
           event.target.parentElement.parentElement.remove();

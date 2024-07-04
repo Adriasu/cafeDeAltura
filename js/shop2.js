@@ -119,6 +119,7 @@ arrayCart.forEach((selectedProduct) => {
     localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
 
     selectedProduct.count++;
+    localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
     counter.innerHTML = selectedProduct.count;
 
     total += selectedProduct.price;
@@ -129,6 +130,7 @@ arrayCart.forEach((selectedProduct) => {
   btnSubtract.addEventListener("click", (event) => {
     if (selectedProduct.count > 1) {
       selectedProduct.count--;
+      localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
       counter.innerHTML = selectedProduct.count;
     } else {
       event.target.parentElement.parentElement.remove();
@@ -209,7 +211,7 @@ productsCards.forEach((card) => {
     const arrayCartLS = JSON.parse(localStorage.getItem("arrayCart"));
     containSelectedProducts.innerHTML = "";
 
-    arrayCartLS.forEach((selectedProduct) => {
+    arrayCart.forEach((selectedProduct) => {
       const card = document.createElement("section");
       const img = document.createElement("img");
       const textContain = document.createElement("div");
@@ -251,17 +253,18 @@ productsCards.forEach((card) => {
         localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
 
         selectedProduct.count++;
+        localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
         counter.innerHTML = selectedProduct.count;
 
         total += selectedProduct.price;
         totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
         localStorage.setItem("totalPrice", JSON.stringify(total));
-        console.log(total);
       });
 
       btnSubtract.addEventListener("click", (event) => {
         if (selectedProduct.count > 1) {
           selectedProduct.count--;
+          localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
           counter.innerHTML = selectedProduct.count;
         } else {
           event.target.parentElement.parentElement.remove();
@@ -278,7 +281,6 @@ productsCards.forEach((card) => {
         total -= selectedProduct.price;
         totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
         localStorage.setItem("totalPrice", JSON.stringify(total));
-        console.log(total);
 
         hideCart(containSelectedProducts);
         cartEmpty(arrayCart, containSelectedProducts);
