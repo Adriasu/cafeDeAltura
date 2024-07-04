@@ -6,7 +6,8 @@
 }
 
 body{
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 #cardsbag {
@@ -38,7 +39,69 @@ body{
     border: solid 2px blueviolet;
     width: 792PX;
     min-height: 415.32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px;
 }
+
+#productsSend h3{
+   font-size: 18px;
+   font-weight: 600;
+   line-height: 24px; 
+}
+
+#productsSend hr{
+    border: 1px solid #E3DED7
+}
+
+#containProducts{
+    width: 776px;
+    min-height: 55.66px;
+    border: solid 2px chartreuse;
+}
+
+#sendFree,
+#sendUrgent{
+    width: 776px;
+    height: 36px;  
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    gap: 16px;
+}
+
+.containText{
+    width: 657px;
+    min-height: 36px;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#containTextSendUrgent{
+    width: 666px;
+}
+
+.containText label{
+    font-weight: 600;
+}
+
+.containText p{
+    font-weight: 400;
+}
+
+.selectorDelivery{
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 #totalPrice{
     border: 2px solid blue;
@@ -49,6 +112,5 @@ body{
 
 #copyrightFooter{
     color: #FFFFFF;
-    position: fixed;
-    bottom: 0;
 }
+
