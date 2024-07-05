@@ -208,7 +208,7 @@ arrayCart.forEach((selectedProduct) => {
     counter.innerHTML = selectedProduct.count;
 
     total += selectedProduct.price;
-    totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
+    textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`;
     localStorage.setItem("totalPrice", JSON.stringify(total));
   });
 
@@ -230,7 +230,7 @@ arrayCart.forEach((selectedProduct) => {
     localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
 
     total -= selectedProduct.price;
-    totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
+    textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`;
     localStorage.setItem("totalPrice", JSON.stringify(total));
 
     hideCart(containSelectedProducts);
