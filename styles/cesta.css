@@ -10,6 +10,30 @@ body{
     flex-direction: column;
 }
 
+#containBagCounter{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#bag{
+    cursor: auto;
+}
+
+#sumProducts{
+    width: 24px;
+    height: 24px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #F7F5F31A;
+}
+
 #cardsbag {
     min-height: 772px;
     margin-top: 64px;
@@ -52,6 +76,74 @@ body{
 
 #productsSend hr{
     border: 1px solid #E3DED7
+}
+
+.cardSelected{
+    display: flex;
+    width: 776px;
+    min-height: 55.66px;
+    border: solid 2px chartreuse;
+    justify-content: space-between;
+}
+
+.containCounterBtn{
+    display: flex;
+    width: 88px;
+    height: 55.66px;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnAdd,
+.btnSubtract{
+    width: 24px;
+    height: 24px;
+}
+
+.containCounterBtn p{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2A5B451A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #2A5B45;
+}
+
+.imgCardSelected{
+    width: 55.66px;
+    height: 55.66px;
+}
+
+.textContain{
+    width: 506.34px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.textNameCardSelected{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.textDescriptionCardSelected{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.textPriceCardSelected{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
 }
 
 #containProducts{
