@@ -132,7 +132,7 @@ btnContinueShopping.innerHTML = "Seguir comprando";
 
 // productos
 
-const sumProducts = document.getElementById("sumProducts")
+const sumProducts = document.getElementById("sumProducts");
 
 const lsArray = JSON.parse(localStorage.getItem("arrayCart"));
 const totalPriceLs = JSON.parse(localStorage.getItem("totalPrice"));
@@ -142,19 +142,19 @@ let arrayCart = [];
 let total = 0;
 let totalOfProducts = 0;
 
-
 if (lsArray !== null) {
   arrayCart = lsArray;
 }
 
 if (totalPriceLs !== null) {
   total = totalPriceLs;
-  textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`
+  textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`;
 }
 
 if (totalOfProductsLs !== null) {
   totalOfProducts = totalOfProductsLs;
   sumProducts.innerHTML = totalOfProducts;
+  titleBag.innerHTML = `Cesta (${totalOfProducts})`;
 }
 
 arrayCart.forEach((selectedProduct) => {
@@ -162,7 +162,7 @@ arrayCart.forEach((selectedProduct) => {
   const img = document.createElement("img");
   const textContain = document.createElement("div");
   const textName = document.createElement("p");
-  const textDescription = document.createElement("p")
+  const textDescription = document.createElement("p");
   const textPrice = document.createElement("p");
   const containCounterBtn = document.createElement("div");
   const counter = document.createElement("p");
@@ -174,7 +174,7 @@ arrayCart.forEach((selectedProduct) => {
   card.appendChild(img);
   card.appendChild(textContain);
   textContain.appendChild(textName);
-  textContain.appendChild(textDescription)
+  textContain.appendChild(textDescription);
   card.appendChild(textPrice);
   containCounterBtn.appendChild(btnSubtract);
   containCounterBtn.appendChild(counter);
@@ -185,14 +185,14 @@ arrayCart.forEach((selectedProduct) => {
   containCounterBtn.className = "containCounterBtn";
   img.className = "imgCardSelected";
   textName.className = "textNameCardSelected";
-  textDescription.className = "textDescriptionCardSelected"
-  textPrice.className ="textPriceCardSelected"
+  textDescription.className = "textDescriptionCardSelected";
+  textPrice.className = "textPriceCardSelected";
   btnAdd.className = "btnAdd";
   btnSubtract.className = "btnSubtract";
 
   img.src = selectedProduct.img;
   textName.innerHTML = selectedProduct.nameProduct;
-  textDescription.innerHTML = "Paquete de café, 250 gr"
+  textDescription.innerHTML = "Paquete de café, 250 gr";
   textPrice.innerHTML = `${selectedProduct.price.toFixed(2)} €`;
   btnAdd.src = "/assets/images/heroicons-outline_plus-sm.png";
   counter.innerHTML = selectedProduct.count;
@@ -201,6 +201,7 @@ arrayCart.forEach((selectedProduct) => {
   btnAdd.addEventListener("click", () => {
     totalOfProducts++;
     sumProducts.innerHTML = totalOfProducts;
+    titleBag.innerHTML = `Cesta (${totalOfProducts})`;
     localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
 
     selectedProduct.count++;
@@ -227,6 +228,7 @@ arrayCart.forEach((selectedProduct) => {
     }
     totalOfProducts--;
     sumProducts.innerHTML = totalOfProducts;
+    titleBag.innerHTML = `Cesta (${totalOfProducts})`;
     localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
 
     total -= selectedProduct.price;
@@ -254,11 +256,36 @@ valueSendFree.innerHTML = "GRATIS";
 urgentSendSelector.type = "radio";
 urgentSendSelector.id = "urgent";
 urgentSendSelector.name = "send";
-urgentSendSelector.value = 9;
+urgentSendSelector.value = (9).toFixed(2);
 deliveryTimeUrgent.innerHTML = "Envío urgente 24h";
 deliveryTimeUrgent.setAttribute("for", "urgent");
 descriptionDeliveryTimeUrgent.innerHTML =
   "Recibe tu pedido en las siguientes 24h (Para pedidos realizados antes de las 13:00).";
 valueSendUrgent.innerHTML = "9,00 €";
 
+// precio envio
 
+let deliverySelected = 0;
+
+freeSendSelector.addEventListener("change", selectedDelivery)
+urgentSendSelector.addEventListener("change", selectedDelivery)
+  
+function selectedDelivery() {
+  if (freeSendSelector.checked === true) {
+    textPriceSend.innerHTML = "GRATIS";
+    deliverySelected = freeSendSelector.value
+  } else {
+    textPriceSend.innerHTML = `${urgentSendSelector.value} €`;
+    deliverySelected = urgentSendSelector.value
+  }
+}
+
+console.log(deliverySelected);
+
+// total de pedido + envio
+
+const totalLS = JSON.parse(localStorage.getItem("totalPrice"));
+
+const sumTotalProductsDelivery = totalLS + parseInt(deliverySelected);
+
+textPriceTotal.innerHTML = `${sumTotalProductsDelivery} €`;

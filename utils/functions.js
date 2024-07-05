@@ -48,3 +48,5 @@ export function cartEmpty(arrayCart, containSelectedProducts) {
   }
   return;
 }
+
+
