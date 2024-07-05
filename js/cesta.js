@@ -211,6 +211,8 @@ arrayCart.forEach((selectedProduct) => {
     total += selectedProduct.price;
     textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`;
     localStorage.setItem("totalPrice", JSON.stringify(total));
+
+    prueba2()
   });
 
   btnSubtract.addEventListener("click", (event) => {
@@ -235,8 +237,7 @@ arrayCart.forEach((selectedProduct) => {
     textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`;
     localStorage.setItem("totalPrice", JSON.stringify(total));
 
-    hideCart(containSelectedProducts);
-    cartEmpty(arrayCart, containSelectedProducts);
+    prueba2()
   });
 });
 
@@ -246,6 +247,7 @@ freeSendSelector.type = "radio";
 freeSendSelector.id = "free";
 freeSendSelector.name = "send";
 freeSendSelector.value = 0;
+freeSendSelector.checked = true;
 deliveryTimeFree.innerHTML = "Envío 5-7 días";
 deliveryTimeFree.setAttribute("for", "free");
 descriptionDeliveryTimeFree.innerHTML = "Opción estándar sin seguimiento";
@@ -265,27 +267,35 @@ valueSendUrgent.innerHTML = "9,00 €";
 
 // precio envio
 
-let deliverySelected = 0;
+textPriceTotal.innerHTML = (
+  JSON.parse(localStorage.getItem("totalPrice")) +
+  parseInt(freeSendSelector.value)
+).toFixed(2);
 
-freeSendSelector.addEventListener("change", selectedDelivery)
-urgentSendSelector.addEventListener("change", selectedDelivery)
-  
+
 function selectedDelivery() {
   if (freeSendSelector.checked === true) {
     textPriceSend.innerHTML = "GRATIS";
-    deliverySelected = freeSendSelector.value
+    textPriceTotal.innerHTML = (parseInt(freeSendSelector.value) + JSON.parse(localStorage.getItem("totalPrice"))).toFixed(2)
+     
+    localStorage.setItem(
+      "totalDelivery",
+      JSON.stringify(freeSendSelector.value)
+    );
   } else {
     textPriceSend.innerHTML = `${urgentSendSelector.value} €`;
-    deliverySelected = urgentSendSelector.value
+    textPriceTotal.innerHTML = (parseInt(urgentSendSelector.value) + JSON.parse(localStorage.getItem("totalPrice"))).toFixed(2)
+     
+    localStorage.setItem(
+      "totalDelivery",
+      JSON.stringify(urgentSendSelector.value)
+    );
   }
 }
 
-console.log(deliverySelected);
+freeSendSelector.addEventListener("change", selectedDelivery);
+urgentSendSelector.addEventListener("change", selectedDelivery);
 
-// total de pedido + envio
-
-const totalLS = JSON.parse(localStorage.getItem("totalPrice"));
-
-const sumTotalProductsDelivery = totalLS + parseInt(deliverySelected);
-
-textPriceTotal.innerHTML = `${sumTotalProductsDelivery} €`;
+function prueba2() {
+  textPriceTotal.innerHTML = parseInt(JSON.parse(localStorage.getItem("totalPrice"))) + parseInt(JSON.parse(localStorage.getItem("totalDelivery")))
+}
