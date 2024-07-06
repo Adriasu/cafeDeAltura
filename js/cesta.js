@@ -128,17 +128,9 @@ textTotal.innerHTML = "TOTAL";
 textPriceTotal.innerHTML = "0.00 €";
 textIVA.innerHTML = "Incluye 0.00 € de IVA";
 btnCheckOut.innerHTML = "Ir a checkout";
+btnCheckOut.href = "/pages/checkOut.html"
 btnContinueShopping.innerHTML = "Seguir comprando";
-
-const ivaLs = JSON.parse(localStorage.getItem("iva"));
-
-console.log(ivaLs);
-
-if (ivaLs === null) {
-  textIVA.innerHTML = "Incluye 0.00 € de IVA";
-} else {
-  totalIva();
-}
+btnContinueShopping.href = "/pages/shop2.html"
 
 // productos
 
@@ -147,8 +139,6 @@ const sumProducts = document.getElementById("sumProducts");
 const lsArray = JSON.parse(localStorage.getItem("arrayCart"));
 const totalPriceLs = JSON.parse(localStorage.getItem("totalPrice"));
 const totalOfProductsLs = JSON.parse(localStorage.getItem("totalProducts"));
-
-console.log(totalPriceLs);
 
 let arrayCart = [];
 let total = 0;
@@ -161,7 +151,7 @@ if (lsArray !== null) {
 if (totalPriceLs !== null) {
   total = totalPriceLs;
   textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`;
-} 
+}
 
 if (totalOfProductsLs !== null) {
   totalOfProducts = totalOfProductsLs;
@@ -211,7 +201,7 @@ arrayCart.forEach((selectedProduct, index) => {
   btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
 
   if (index > 0) {
-    card.className = "selectedMoreCards";
+    card.className = "selectedMoreCards"
   }
 
   btnAdd.addEventListener("click", () => {
@@ -285,6 +275,8 @@ valueSendUrgent.innerHTML = "9,00 €";
 
 // precio envio
 
+sumTotalProductsShipping()
+
 const totalDelivery = parseInt(
   JSON.parse(localStorage.getItem("totalDelivery"))
 );
@@ -299,8 +291,6 @@ if (totalDelivery !== null) {
   } else if (totalDelivery === 9) {
     urgentSendSelector.checked = true;
     textPriceSend.innerHTML = `${urgentSendSelector.value} €`;
-  } else {
-    textPriceTotal.innerHTML = "0.00 €";
   }
 }
 
@@ -358,3 +348,5 @@ function totalIva() {
   textIVA.innerHTML = `Incluye ${iva} € de IVA`;
   return;
 }
+
+totalIva();
