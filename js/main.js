@@ -186,11 +186,11 @@ productsCards.slice(0, 4).forEach((card) => {
 
     totalOfProducts += productSelected.count;
     sumProducts.innerHTML = totalOfProducts;
-    localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
+    localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts))
 
     total += productSelected.count * productSelected.price;
     totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
-    localStorage.setItem("totalPrice", JSON.stringify(total));
+    localStorage.setItem("totalPrice", JSON.stringify(total))
 
     productCount(productSelected, arrayCart);
     localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
@@ -235,7 +235,7 @@ productsCards.slice(0, 4).forEach((card) => {
       btnAdd.addEventListener("click", () => {
         totalOfProducts++;
         sumProducts.innerHTML = totalOfProducts;
-        localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
+        localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts))
 
         selectedProduct.count++;
         localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
@@ -243,7 +243,7 @@ productsCards.slice(0, 4).forEach((card) => {
 
         total += selectedProduct.price;
         totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
-        localStorage.setItem("totalPrice", JSON.stringify(total));
+        localStorage.setItem("totalPrice", JSON.stringify(total))
       });
 
       btnSubtract.addEventListener("click", (event) => {
@@ -261,11 +261,11 @@ productsCards.slice(0, 4).forEach((card) => {
         }
         totalOfProducts -= productSelected.count;
         sumProducts.innerHTML = totalOfProducts;
-        localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts));
+        localStorage.setItem("totalProducts", JSON.stringify(totalOfProducts))
 
         total -= selectedProduct.price;
         totalPrice.innerHTML = `Check-Out: ${total.toFixed(2)} €`;
-        localStorage.setItem("totalPrice", JSON.stringify(total));
+        localStorage.setItem("totalPrice", JSON.stringify(total))
 
         hideCart(containSelectedProducts);
         cartEmpty(arrayCart, containSelectedProducts);
@@ -288,8 +288,6 @@ btnClear.addEventListener("click", () => {
   total = 0;
   totalPrice.innerHTML = "Check-Out: 0.00 €";
   counterBag(totalOfProducts);
-  localStorage.clear();
+  localStorage.clear()
   localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
 });
-
-
