@@ -198,10 +198,6 @@ arrayCart.forEach((selectedProduct) => {
   counter.innerHTML = selectedProduct.count;
   btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
 
-  if (index > 0) {
-    card.className = "selectedMoreCards"
-  }
-
   btnAdd.addEventListener("click", () => {
     totalOfProducts++;
     sumProducts.innerHTML = totalOfProducts;
