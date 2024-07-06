@@ -82,16 +82,8 @@ body{
     display: flex;
     width: 776px;
     min-height: 55.66px;
+    border-top: solid 2px chartreuse;
     justify-content: space-between;
-}
-
-.selectedMoreCards{
-    display: flex;
-    width: 776px;
-    min-height: 55.66px;
-    border-top: 1px solid #E3DED7;
-    justify-content: space-between;
-    padding-top: 24px;
 }
 
 .containCounterBtn{

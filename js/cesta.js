@@ -157,7 +157,7 @@ if (totalOfProductsLs !== null) {
   titleBag.innerHTML = `Cesta (${totalOfProducts})`;
 }
 
-arrayCart.forEach((selectedProduct, index) => {
+arrayCart.forEach((selectedProduct) => {
   const card = document.createElement("section");
   const img = document.createElement("img");
   const textContain = document.createElement("div");
@@ -199,7 +199,7 @@ arrayCart.forEach((selectedProduct, index) => {
   btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
 
   if (index > 0) {
-    card.className = "selectedMore"
+    card.className = "selectedMoreCards"
   }
 
   btnAdd.addEventListener("click", () => {
@@ -216,8 +216,7 @@ arrayCart.forEach((selectedProduct, index) => {
     textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`;
     localStorage.setItem("totalPrice", JSON.stringify(total));
 
-    sumTotalProductsShipping();
-    totalIva();
+    prueba2()
   });
 
   btnSubtract.addEventListener("click", (event) => {
@@ -242,8 +241,7 @@ arrayCart.forEach((selectedProduct, index) => {
     textPriceSubTotal.innerHTML = `${total.toFixed(2)} €`;
     localStorage.setItem("totalPrice", JSON.stringify(total));
 
-    sumTotalProductsShipping();
-    totalIva();
+    prueba2()
   });
 });
 
@@ -273,44 +271,25 @@ valueSendUrgent.innerHTML = "9,00 €";
 
 // precio envio
 
-sumTotalProductsShipping()
+textPriceTotal.innerHTML = (
+  JSON.parse(localStorage.getItem("totalPrice")) +
+  parseInt(freeSendSelector.value)
+).toFixed(2);
 
-const totalDelivery = parseInt(
-  JSON.parse(localStorage.getItem("totalDelivery"))
-);
-
-if (totalDelivery !== null) {
-  textPriceTotal.innerHTML = parseInt(
-    JSON.parse(localStorage.getItem("totalPrice")) + totalDelivery
-  ).toFixed(2);
-  if (totalDelivery === 0) {
-    freeSendSelector.checked = true;
-    textPriceSend.innerHTML = "GRATIS";
-  } else {
-    urgentSendSelector.checked = true;
-    textPriceSend.innerHTML = `${urgentSendSelector.value} €`;
-  }
-}
 
 function selectedDelivery() {
   if (freeSendSelector.checked === true) {
     textPriceSend.innerHTML = "GRATIS";
-    textPriceTotal.innerHTML = (
-      parseInt(freeSendSelector.value) +
-      JSON.parse(localStorage.getItem("totalPrice"))
-    ).toFixed(2);
-
+    textPriceTotal.innerHTML = (parseInt(freeSendSelector.value) + JSON.parse(localStorage.getItem("totalPrice"))).toFixed(2)
+     
     localStorage.setItem(
       "totalDelivery",
       JSON.stringify(freeSendSelector.value)
     );
   } else {
     textPriceSend.innerHTML = `${urgentSendSelector.value} €`;
-    textPriceTotal.innerHTML = (
-      parseInt(urgentSendSelector.value) +
-      JSON.parse(localStorage.getItem("totalPrice"))
-    ).toFixed(2);
-
+    textPriceTotal.innerHTML = (parseInt(urgentSendSelector.value) + JSON.parse(localStorage.getItem("totalPrice"))).toFixed(2)
+     
     localStorage.setItem(
       "totalDelivery",
       JSON.stringify(urgentSendSelector.value)
@@ -321,30 +300,6 @@ function selectedDelivery() {
 freeSendSelector.addEventListener("change", selectedDelivery);
 urgentSendSelector.addEventListener("change", selectedDelivery);
 
-function sumTotalProductsShipping() {
-  textPriceTotal.innerHTML = (
-    parseInt(JSON.parse(localStorage.getItem("totalPrice"))) +
-    parseInt(JSON.parse(localStorage.getItem("totalDelivery")))
-  ).toFixed(2);
-  return;
+function prueba2() {
+  textPriceTotal.innerHTML = parseInt(JSON.parse(localStorage.getItem("totalPrice"))) + parseInt(JSON.parse(localStorage.getItem("totalDelivery")))
 }
-
-// IVA
-
-const totalLs = (
-  parseInt(JSON.parse(localStorage.getItem("totalPrice"))) +
-  parseInt(JSON.parse(localStorage.getItem("totalDelivery")))
-).toFixed(2);
-
-function totalIva() {
-  const iva =
-    ((parseInt(JSON.parse(localStorage.getItem("totalPrice"))) +
-      parseInt(JSON.parse(localStorage.getItem("totalDelivery")))) *
-      21) /
-    100;
-  localStorage.setItem("iva", JSON.stringify(iva));
-  textIVA.innerHTML = `Incluye ${iva} € de IVA`;
-  return;
-}
-
-totalIva();
