@@ -305,3 +305,4 @@ btnClear.addEventListener("click", () => {
   localStorage.clear();
   localStorage.setItem("arrayCart", JSON.stringify(arrayCart));
 });
+

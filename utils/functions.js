@@ -38,7 +38,7 @@ export function hideCart(containSelectedProducts) {
   return;
 }
 
-// texto carrito vacío
+// texto carrito vacío shop/main
 
 export function cartEmpty(arrayCart, containSelectedProducts) {
   if (arrayCart.length === 0) {
@@ -48,5 +48,4 @@ export function cartEmpty(arrayCart, containSelectedProducts) {
   }
   return;
 }
-
 

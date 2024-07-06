@@ -199,7 +199,7 @@ arrayCart.forEach((selectedProduct, index) => {
   btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
 
   if (index > 0) {
-    card.className = "selectedMoreCards"
+    card.className = "selectedMore"
   }
 
   btnAdd.addEventListener("click", () => {
