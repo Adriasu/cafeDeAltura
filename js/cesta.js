@@ -128,11 +128,46 @@ textTotal.innerHTML = "TOTAL";
 textPriceTotal.innerHTML = "0.00 €";
 textIVA.innerHTML = "Incluye 0.00 € de IVA";
 btnCheckOut.innerHTML = "Ir a checkout";
-btnCheckOut.href = "/pages/checkOut.html"
+btnCheckOut.href = "/pages/checkOut.html";
 btnContinueShopping.innerHTML = "Seguir comprando";
-btnContinueShopping.href = "/pages/shop2.html"
+btnContinueShopping.href = "/pages/shop2.html";
 
-// productos
+// envio gratis
+
+freeSendSelector.type = "radio";
+freeSendSelector.id = "free";
+freeSendSelector.name = "send";
+freeSendSelector.value = 0;
+freeSendSelector.checked = true;
+deliveryTimeFree.innerHTML = "Envío 5-7 días";
+deliveryTimeFree.setAttribute("for", "free");
+descriptionDeliveryTimeFree.innerHTML = "Opción estándar sin seguimiento";
+valueSendFree.innerHTML = "GRATIS";
+
+// envio urgente
+
+urgentSendSelector.type = "radio";
+urgentSendSelector.id = "urgent";
+urgentSendSelector.name = "send";
+urgentSendSelector.value = (9).toFixed(2);
+deliveryTimeUrgent.innerHTML = "Envío urgente 24h";
+deliveryTimeUrgent.setAttribute("for", "urgent");
+descriptionDeliveryTimeUrgent.innerHTML =
+  "Recibe tu pedido en las siguientes 24h (Para pedidos realizados antes de las 13:00).";
+valueSendUrgent.innerHTML = "9,00 €";
+
+//-----------------------//
+
+let valueIva = 0;
+localStorage.setItem("iva", JSON.stringify(valueIva));
+
+const totalDeliveryLs = JSON.parse(localStorage.getItem("totalDelivery"));
+console.log(totalDeliveryLs);
+
+if (totalDeliveryLs === null) {
+  let valueDelivery = 0;
+  localStorage.setItem("totalDelivery", JSON.stringify(valueDelivery));
+} 
 
 const sumProducts = document.getElementById("sumProducts");
 
@@ -201,7 +236,7 @@ arrayCart.forEach((selectedProduct, index) => {
   btnSubtract.src = "/assets/images/heroicons-outline_minus-sm.png";
 
   if (index > 0) {
-    card.className = "selectedMoreCards"
+    card.className = "selectedMoreCards";
   }
 
   btnAdd.addEventListener("click", () => {
@@ -249,33 +284,9 @@ arrayCart.forEach((selectedProduct, index) => {
   });
 });
 
-// envio gratis
-
-freeSendSelector.type = "radio";
-freeSendSelector.id = "free";
-freeSendSelector.name = "send";
-freeSendSelector.value = 0;
-freeSendSelector.checked = true;
-deliveryTimeFree.innerHTML = "Envío 5-7 días";
-deliveryTimeFree.setAttribute("for", "free");
-descriptionDeliveryTimeFree.innerHTML = "Opción estándar sin seguimiento";
-valueSendFree.innerHTML = "GRATIS";
-
-// envio urgente
-
-urgentSendSelector.type = "radio";
-urgentSendSelector.id = "urgent";
-urgentSendSelector.name = "send";
-urgentSendSelector.value = (9).toFixed(2);
-deliveryTimeUrgent.innerHTML = "Envío urgente 24h";
-deliveryTimeUrgent.setAttribute("for", "urgent");
-descriptionDeliveryTimeUrgent.innerHTML =
-  "Recibe tu pedido en las siguientes 24h (Para pedidos realizados antes de las 13:00).";
-valueSendUrgent.innerHTML = "9,00 €";
-
 // precio envio
 
-sumTotalProductsShipping()
+sumTotalProductsShipping();
 
 const totalDelivery = parseInt(
   JSON.parse(localStorage.getItem("totalDelivery"))
@@ -318,6 +329,7 @@ function selectedDelivery() {
       JSON.stringify(urgentSendSelector.value)
     );
   }
+  totalIva();
 }
 
 freeSendSelector.addEventListener("change", selectedDelivery);
