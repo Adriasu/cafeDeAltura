@@ -34,9 +34,8 @@
     flex-direction: column;
     padding: 8px;
     width: 792px;
-    height: 972px;
+    min-height: 972px;
     gap: 24px;
-    border: 2px solid red;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -44,7 +43,6 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
     }
-
 
 #productTable > h3{
     font-size: 18px;
@@ -173,7 +171,6 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
 } */
 
-
 .divider{
     border: 1px solid #E3DED7;
     width: 776px;
@@ -297,9 +294,30 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 8px;
 }
 
+#addressDetails{
+    display: flex;
+    width: 521px;
+    height: 55px;
+    gap: 24px;
+}
 
+.streetNumApartmentDoor{
+    display: flex;
+    flex-direction: column;
+    width: 112.25px;
+    height: 55px;
+    gap: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
 
-
+.streetNumApartmentDoor input{
+    height: 36px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    padding: 8px;
+}
 
 #formAddress input{
     outline: none;
@@ -327,11 +345,6 @@ input[type=number]::-webkit-outer-spin-button {
     border: 2px solid #3F8F6B; 
 }
 
-
-
-
-
-
 #totalPrice{
     width: 384px;
     height: 280px;
@@ -341,8 +354,6 @@ input[type=number]::-webkit-outer-spin-button {
     justify-content: space-between;
     gap: 16px;
     padding: 24px;
-    border: 2px solid greenyellow;
-
 }
 
 #totalPrice > a{
@@ -357,7 +368,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: #FFFFFF;
     opacity: 30%;
 }
-
 
 #copyrightFooter{
     color: #FFFFFF;
