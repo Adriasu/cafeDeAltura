@@ -639,7 +639,7 @@ nav{
     box-shadow: 0px 4px 4px 0px #00000040;
  }
 
- form{
+ #formIndex{
     min-width: 470px;
     min-height: 488px;
     display: flex;

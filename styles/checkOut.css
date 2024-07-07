@@ -39,6 +39,13 @@
     border: 2px solid red;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+
 #productTable > h3{
     font-size: 18px;
     font-weight: 600;
@@ -74,6 +81,144 @@
     width: 55px;
 }
 
+#formCardPayment{
+    width: 279px;
+    height: 181px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+#formCardPayment input{
+    outline: none;
+}
+
+#formCardPayment input:hover{
+    border: 1px solid #9B9EA3;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+}
+
+#formCardPayment input:focus{
+    border: 2px solid #3F8F6B; 
+}
+
+.titularNumCard{
+    display: flex;
+    flex-direction: column;
+    width: 279px;
+    height: 55px;
+    gap: 3px;
+}
+
+.titularNumCard > label{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.titularNumCard > input{
+    width: 279px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    padding: 8px;
+}
+
+.titularNumCard input::placeholder{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #515051;
+}
+
+#expirationDateCVC{
+    width: 279px;
+    height: 55px;
+    gap: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateCVC{
+    width: 127.5PX;
+    height: 55PX;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.dateCVC > label{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.dateCVC > input{
+    width: 127.5px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #D1D5DB;
+    padding: 8px;
+}
+
+.dateCVC input::placeholder{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #515051;
+}
+
+/* #expirationDate::-webkit-calendar-picker-indicator {
+    display: none;
+} */
+
+
+.divider{
+    border: 1px solid #E3DED7;
+    width: 776px;
+}
+
+#bankTransfer{
+    display: flex;
+    justify-content: space-between;
+    width: 776x;
+    height: 36px;
+    gap: 16px;
+    align-items: center;
+}
+
+#detailsBankTransfer{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 736px;
+    height: 36px;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+#detailsBankTransfer > label{
+    font-weight: 600;
+}
+
+#detailsBankTransfer > p{
+    font-weight: 400;
+}
+
+#bizum{
+  display: flex;
+  width: 776px;
+  gap: 16px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#bizum img{
+    width: 69.23px;
+    height: 30px;
+}
 
 .radios{
     width: 24px;
@@ -84,14 +229,103 @@
     accent-color: #2A5B45;
 }
 
+#formAddress{
+    width: 521px;
+    height: 433px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.userNameLastNamePhoneEmailCountry{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 521px;
+    height: 55px;
+}
+
+.userNameLastNamePhoneEmailCountry input{
+    border: 1px solid #D1D5DB;
+    width: 521px;
+    height: 36px;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.userNameLastNamePhoneEmailCountry label{
+    font-size: 12px;
+    font-weight: 400px;
+    line-height: 16px;
+}
+
+.userNameLastNamePhoneEmailCountry select{
+    border: 1px solid #D1D5DB;
+    width: 521px;
+    height: 36px;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+#userPopulationCp{
+   width: 521px;
+   height: 55px;
+   display: flex;
+   gap: 24px;
+   justify-content: space-between;
+   align-items: center; 
+}
+
+.populationCp{
+    display: flex;
+    flex-direction: column;
+    width: 248.5px;
+    height: 55px;
+    gap: 3px;
+}
+
+.populationCp label{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.populationCp input{
+    border: 1px solid #D1D5DB;
+    height: 36px;
+    border-radius: 6px;
+    padding: 8px;
+}
 
 
 
 
 
+#formAddress input{
+    outline: none;
+}
 
+#formAddress input:hover{
+    border: 1px solid #9B9EA3;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+}
 
+#formAddress input:focus{
+    border: 2px solid #3F8F6B; 
+}
 
+#formAddress select{
+    outline: none;
+}
+
+#formAddress select:hover{
+    border: 1px solid #9B9EA3;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+}
+
+#formAddress select:focus{
+    border: 2px solid #3F8F6B; 
+}
 
 
 
