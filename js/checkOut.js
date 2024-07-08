@@ -20,4 +20,3 @@ const sumSubtotalDelivery = (subTotal + totalDelivery).toFixed(2)
 textPriceTotal.innerHTML = `${sumSubtotalDelivery} €`
 
 textIVA.innerHTML = `Incluye ${JSON.parse(localStorage.getItem("iva"))}€ de IVA`
-

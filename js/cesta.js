@@ -292,9 +292,9 @@ const totalDelivery = parseInt(
 );
 
 if (totalDelivery !== null) {
-  textPriceTotal.innerHTML = parseInt(
+  textPriceTotal.innerHTML = `${ parseInt(
     JSON.parse(localStorage.getItem("totalPrice")) + totalDelivery
-  ).toFixed(2);
+  ).toFixed(2)} €`;
   if (totalDelivery === 0) {
     freeSendSelector.checked = true;
     textPriceSend.innerHTML = "GRATIS";
@@ -307,10 +307,10 @@ if (totalDelivery !== null) {
 function selectedDelivery() {
   if (freeSendSelector.checked === true) {
     textPriceSend.innerHTML = "GRATIS";
-    textPriceTotal.innerHTML = (
+    textPriceTotal.innerHTML = `${(
       parseInt(freeSendSelector.value) +
       JSON.parse(localStorage.getItem("totalPrice"))
-    ).toFixed(2);
+    ).toFixed(2)} €`;
 
     localStorage.setItem(
       "totalDelivery",
@@ -318,10 +318,10 @@ function selectedDelivery() {
     );
   } else {
     textPriceSend.innerHTML = `${urgentSendSelector.value} €`;
-    textPriceTotal.innerHTML = (
+    textPriceTotal.innerHTML = `${(
       parseInt(urgentSendSelector.value) +
       JSON.parse(localStorage.getItem("totalPrice"))
-    ).toFixed(2);
+    ).toFixed(2)} €`;
 
     localStorage.setItem(
       "totalDelivery",
@@ -335,10 +335,10 @@ freeSendSelector.addEventListener("change", selectedDelivery);
 urgentSendSelector.addEventListener("change", selectedDelivery);
 
 function sumTotalProductsShipping() {
-  textPriceTotal.innerHTML = (
+  textPriceTotal.innerHTML = `${(
     parseInt(JSON.parse(localStorage.getItem("totalPrice"))) +
     parseInt(JSON.parse(localStorage.getItem("totalDelivery")))
-  ).toFixed(2);
+  ).toFixed(2)} €`;
   return;
 }
 
@@ -356,7 +356,7 @@ function totalIva() {
       21) /
     100;
   localStorage.setItem("iva", JSON.stringify(iva));
-  textIVA.innerHTML = `Incluye ${iva} € de IVA`;
+  textIVA.innerHTML = `Incluye ${iva}€ de IVA`;
   return;
 }
 
