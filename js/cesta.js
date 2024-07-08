@@ -162,7 +162,6 @@ let valueIva = 0;
 localStorage.setItem("iva", JSON.stringify(valueIva));
 
 const totalDeliveryLs = JSON.parse(localStorage.getItem("totalDelivery"));
-console.log(totalDeliveryLs);
 
 if (totalDeliveryLs === null) {
   let valueDelivery = 0;
