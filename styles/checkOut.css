@@ -56,6 +56,10 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
 }
 
+.hidden{
+    display: none;
+}
+
 #detailsCardPayment{
     display: flex;
     flex-direction: column;
@@ -82,7 +86,7 @@ input[type=number]::-webkit-outer-spin-button {
 #formCardPayment{
     width: 279px;
     height: 181px;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 8px;
     justify-content: space-between;
@@ -168,6 +172,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 /* #expirationDate::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+#expirationDate::-webkit-datetime-edit-day-field {
+    display: none;
+}
+
+#expirationDate::-webkit-datetime-edit-text {
     display: none;
 } */
 
@@ -356,8 +368,7 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 24px;
 }
 
-#totalPrice > a{
-    text-decoration: none;
+#totalPrice button{
     background-color: #2A5B45;
     height: 40px;
     width: 196px;
@@ -367,6 +378,7 @@ input[type=number]::-webkit-outer-spin-button {
     align-items: center;
     color: #FFFFFF;
     opacity: 30%;
+    border: none;
 }
 
 #copyrightFooter{

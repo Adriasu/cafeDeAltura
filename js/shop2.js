@@ -59,13 +59,13 @@ const lsArray = JSON.parse(localStorage.getItem("arrayCart"));
 const totalPriceLs = JSON.parse(localStorage.getItem("totalPrice"));
 const totalOfProductsLs = JSON.parse(localStorage.getItem("totalProducts"));
 
-let arrayCart = [];
+let arrayCart = JSON.parse(localStorage.getItem("arrayCart"))??[];
 let total = 0;
 let totalOfProducts = 0;
 
-if (lsArray !== null) {
-  arrayCart = lsArray;
-}
+// if (lsArray !== null) {
+//   arrayCart = lsArray;
+// }
 
 if (totalPriceLs !== null) {
   total = totalPriceLs;
